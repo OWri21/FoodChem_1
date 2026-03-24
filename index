@@ -1,0 +1,1388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Food Chemistry — Masters Revision Guide</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,400&family=JetBrains+Mono:wght@300;400;500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #08111f;
+    --surface: #0d1b2e;
+    --card: #112240;
+    --card2: #162d4a;
+    --border: #1e3a5f;
+    --accent: #e8a020;
+    --accent2: #29c5d1;
+    --accent3: #7fd18c;
+    --text: #ccd6f6;
+    --text-muted: #7a96b8;
+    --text-bright: #e8f0fe;
+    --red: #e05c6a;
+    --purple: #a78bfa;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+  /* BG grid */
+  body::before {
+    content: '';
+    position: fixed; inset: 0; z-index: 0;
+    background-image:
+      linear-gradient(rgba(41,197,209,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(41,197,209,0.04) 1px, transparent 1px);
+    background-size: 40px 40px;
+    pointer-events: none;
+  }
+
+  /* ── HEADER ── */
+  header {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(8,17,31,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 24px;
+    display: flex; align-items: center; gap: 32px;
+    height: 60px;
+  }
+  .logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem; font-weight: 700;
+    color: var(--accent);
+    white-space: nowrap;
+    letter-spacing: 0.02em;
+  }
+  .logo span { color: var(--accent2); font-style: italic; }
+  nav { display: flex; gap: 4px; flex: 1; justify-content: center; }
+  .nav-btn {
+    background: none; border: none; cursor: pointer;
+    color: var(--text-muted); font-family: 'DM Sans', sans-serif;
+    font-size: 0.82rem; font-weight: 500; letter-spacing: 0.08em;
+    text-transform: uppercase; padding: 6px 16px; border-radius: 6px;
+    transition: all 0.2s; white-space: nowrap;
+  }
+  .nav-btn:hover { color: var(--text-bright); background: var(--card); }
+  .nav-btn.active { color: var(--accent); background: rgba(232,160,32,0.12); }
+  .badge { 
+    display: inline-block; background: var(--accent2); color: var(--bg);
+    font-size: 0.62rem; font-weight: 700; padding: 1px 6px; border-radius: 10px;
+    margin-left: 4px; vertical-align: middle;
+  }
+
+  /* ── MAIN LAYOUT ── */
+  .page { display: none; position: relative; z-index: 1; }
+  .page.active { display: block; }
+  .container { max-width: 1280px; margin: 0 auto; padding: 28px 24px; }
+
+  /* ── TOPICS PAGE ── */
+  .topics-layout { display: grid; grid-template-columns: 220px 1fr; gap: 24px; align-items: start; }
+  .topic-sidebar {
+    position: sticky; top: 80px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 8px;
+    overflow: hidden;
+  }
+  .sidebar-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem; color: var(--text-muted);
+    text-transform: uppercase; letter-spacing: 0.12em;
+    padding: 8px 12px 6px;
+  }
+  .topic-btn {
+    display: block; width: 100%;
+    background: none; border: none; cursor: pointer;
+    text-align: left; padding: 9px 12px; border-radius: 8px;
+    color: var(--text-muted); font-family: 'DM Sans', sans-serif;
+    font-size: 0.82rem; transition: all 0.15s;
+    margin-bottom: 2px;
+  }
+  .topic-btn:hover { background: var(--card); color: var(--text); }
+  .topic-btn.active { background: rgba(232,160,32,0.12); color: var(--accent); font-weight: 600; }
+  .topic-num {
+    display: inline-block; width: 20px; height: 20px; line-height: 20px;
+    background: var(--card); border-radius: 4px;
+    font-family: 'JetBrains Mono', monospace; font-size: 0.65rem;
+    text-align: center; margin-right: 8px; color: var(--accent2);
+  }
+  .topic-btn.active .topic-num { background: rgba(232,160,32,0.2); color: var(--accent); }
+
+  /* ── TOPIC CONTENT ── */
+  .topic-content { display: none; animation: fadeIn 0.3s ease; }
+  .topic-content.active { display: block; }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+
+  .topic-header {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 28px 32px;
+    margin-bottom: 20px;
+    position: relative; overflow: hidden;
+  }
+  .topic-header::before {
+    content: attr(data-emoji);
+    position: absolute; right: 24px; top: 50%; transform: translateY(-50%);
+    font-size: 5rem; opacity: 0.12;
+  }
+  .topic-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem; color: var(--accent2);
+    text-transform: uppercase; letter-spacing: 0.14em;
+    margin-bottom: 8px;
+  }
+  .topic-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem; font-weight: 700; color: var(--text-bright);
+    line-height: 1.2;
+  }
+  .topic-subtitle { color: var(--text-muted); font-size: 0.9rem; margin-top: 8px; font-style: italic; }
+
+  .cards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; margin-bottom: 20px; }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px; padding: 20px;
+    transition: border-color 0.2s;
+  }
+  .card:hover { border-color: var(--accent2); }
+  .card-title {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em;
+    color: var(--accent); margin-bottom: 12px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .card-title::before { content: '▸'; color: var(--accent2); }
+  .card p { font-size: 0.87rem; line-height: 1.7; color: var(--text); }
+  .card ul { list-style: none; padding: 0; }
+  .card ul li { font-size: 0.87rem; line-height: 1.7; color: var(--text); padding-left: 16px; position: relative; }
+  .card ul li::before { content: '·'; position: absolute; left: 4px; color: var(--accent2); }
+
+  .equation-box {
+    background: var(--bg); border: 1px solid var(--border);
+    border-left: 3px solid var(--accent2);
+    border-radius: 8px; padding: 16px 20px; margin: 12px 0;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.9rem; color: var(--accent2);
+    line-height: 1.8;
+  }
+  .eq-label { font-size: 0.68rem; color: var(--text-muted); margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.1em; }
+  .eq-vars { font-size: 0.78rem; color: var(--text-muted); margin-top: 8px; font-family: 'DM Sans', sans-serif; }
+
+  .highlight-box {
+    background: rgba(232,160,32,0.06);
+    border: 1px solid rgba(232,160,32,0.2);
+    border-radius: 10px; padding: 16px 20px; margin: 16px 0;
+  }
+  .highlight-box .hl-title { color: var(--accent); font-weight: 600; font-size: 0.85rem; margin-bottom: 8px; }
+  .highlight-box p, .highlight-box li { font-size: 0.87rem; line-height: 1.7; }
+
+  table { width: 100%; border-collapse: collapse; font-size: 0.85rem; margin: 12px 0; }
+  th { background: var(--card2); color: var(--accent); padding: 10px 14px; text-align: left; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.08em; border-bottom: 1px solid var(--border); }
+  td { padding: 9px 14px; border-bottom: 1px solid rgba(30,58,95,0.5); color: var(--text); }
+  tr:last-child td { border-bottom: none; }
+  tr:hover td { background: rgba(255,255,255,0.02); }
+
+  .ref-box {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 10px; padding: 16px 20px; margin-top: 20px;
+  }
+  .ref-title { font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 10px; }
+  .ref-item { font-size: 0.8rem; color: var(--text-muted); margin-bottom: 6px; padding-left: 16px; position: relative; }
+  .ref-item::before { content: '[' attr(data-n) ']'; position: absolute; left: -4px; color: var(--accent2); font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; }
+
+  /* ── QUIZ PAGE ── */
+  .quiz-wrap { max-width: 780px; margin: 0 auto; }
+  .quiz-intro {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 16px; padding: 28px 32px; margin-bottom: 24px;
+    text-align: center;
+  }
+  .quiz-intro h2 { font-family: 'Playfair Display', serif; font-size: 1.8rem; color: var(--text-bright); margin-bottom: 8px; }
+  .quiz-intro p { color: var(--text-muted); font-size: 0.9rem; }
+
+  .q-card {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 14px; padding: 24px 28px; margin-bottom: 16px;
+    transition: border-color 0.2s;
+  }
+  .q-number { font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; color: var(--accent2); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 10px; }
+  .q-text { font-size: 1rem; color: var(--text-bright); line-height: 1.6; margin-bottom: 18px; font-weight: 500; }
+  .options { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .opt {
+    background: var(--surface); border: 1.5px solid var(--border);
+    border-radius: 8px; padding: 12px 16px; cursor: pointer;
+    font-size: 0.87rem; color: var(--text); transition: all 0.15s;
+    text-align: left; font-family: 'DM Sans', sans-serif;
+  }
+  .opt:hover:not(:disabled) { border-color: var(--accent2); color: var(--text-bright); }
+  .opt.correct { border-color: var(--accent3)!important; background: rgba(127,209,140,0.1)!important; color: var(--accent3)!important; }
+  .opt.wrong { border-color: var(--red)!important; background: rgba(224,92,106,0.1)!important; color: var(--red)!important; }
+  .opt:disabled { cursor: default; }
+
+  .explanation {
+    display: none; margin-top: 14px;
+    background: rgba(41,197,209,0.06);
+    border: 1px solid rgba(41,197,209,0.2);
+    border-radius: 8px; padding: 12px 16px;
+    font-size: 0.85rem; color: var(--text); line-height: 1.6;
+  }
+  .explanation.show { display: block; animation: fadeIn 0.3s ease; }
+  .explanation strong { color: var(--accent2); }
+
+  .quiz-actions { text-align: center; margin-top: 24px; }
+  .btn-primary {
+    background: var(--accent); color: var(--bg);
+    border: none; padding: 12px 32px; border-radius: 8px;
+    font-family: 'DM Sans', sans-serif; font-size: 0.9rem; font-weight: 700;
+    cursor: pointer; transition: all 0.2s; letter-spacing: 0.05em;
+  }
+  .btn-primary:hover { background: #f0b030; transform: translateY(-1px); box-shadow: 0 6px 20px rgba(232,160,32,0.3); }
+  .btn-secondary {
+    background: var(--card); color: var(--text);
+    border: 1px solid var(--border); padding: 12px 32px; border-radius: 8px;
+    font-family: 'DM Sans', sans-serif; font-size: 0.9rem;
+    cursor: pointer; transition: all 0.2s; margin-left: 12px;
+  }
+  .btn-secondary:hover { border-color: var(--accent2); color: var(--text-bright); }
+
+  .score-display {
+    display: none; text-align: center;
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 16px; padding: 36px;
+  }
+  .score-display.show { display: block; animation: fadeIn 0.4s ease; }
+  .score-circle {
+    width: 120px; height: 120px; border-radius: 50%;
+    border: 4px solid var(--accent); margin: 0 auto 16px;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+  }
+  .score-num { font-family: 'Playfair Display', serif; font-size: 2.4rem; color: var(--accent); font-weight: 700; line-height: 1; }
+  .score-den { font-size: 0.85rem; color: var(--text-muted); }
+  .score-msg { font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--text-bright); margin-bottom: 8px; }
+  .score-sub { color: var(--text-muted); font-size: 0.88rem; }
+
+  /* ── CHATBOT ── */
+  .chat-layout { max-width: 820px; margin: 0 auto; }
+  .chat-header {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 14px 14px 0 0; padding: 20px 24px;
+    display: flex; align-items: center; gap: 14px;
+  }
+  .chat-avatar {
+    width: 44px; height: 44px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.3rem; flex-shrink: 0;
+  }
+  .chat-name { font-weight: 600; color: var(--text-bright); font-size: 0.95rem; }
+  .chat-status { font-size: 0.78rem; color: var(--accent3); }
+
+  .chat-messages {
+    background: var(--card);
+    border-left: 1px solid var(--border); border-right: 1px solid var(--border);
+    height: 460px; overflow-y: auto; padding: 20px;
+    display: flex; flex-direction: column; gap: 16px;
+    scroll-behavior: smooth;
+  }
+  .chat-messages::-webkit-scrollbar { width: 4px; }
+  .chat-messages::-webkit-scrollbar-track { background: transparent; }
+  .chat-messages::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+
+  .msg { display: flex; gap: 12px; animation: fadeIn 0.3s ease; max-width: 90%; }
+  .msg.user { flex-direction: row-reverse; align-self: flex-end; }
+  .msg-avatar {
+    width: 32px; height: 32px; border-radius: 50%; flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.9rem;
+  }
+  .msg.ai .msg-avatar { background: linear-gradient(135deg, var(--accent), var(--accent2)); }
+  .msg.user .msg-avatar { background: var(--card2); }
+  .msg-bubble {
+    padding: 12px 16px; border-radius: 12px;
+    font-size: 0.88rem; line-height: 1.6;
+  }
+  .msg.ai .msg-bubble { background: var(--surface); color: var(--text); border-radius: 4px 12px 12px 12px; border: 1px solid var(--border); }
+  .msg.user .msg-bubble { background: rgba(232,160,32,0.12); color: var(--text-bright); border-radius: 12px 4px 12px 12px; border: 1px solid rgba(232,160,32,0.25); }
+
+  .suggested-qs { padding: 12px 20px; background: var(--surface); border-left: 1px solid var(--border); border-right: 1px solid var(--border); display: flex; gap: 8px; flex-wrap: wrap; }
+  .sug-btn { background: var(--card); border: 1px solid var(--border); border-radius: 20px; padding: 5px 14px; font-size: 0.78rem; color: var(--text-muted); cursor: pointer; transition: all 0.15s; font-family: 'DM Sans', sans-serif; }
+  .sug-btn:hover { border-color: var(--accent2); color: var(--accent2); }
+
+  .chat-input-area {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 0 0 14px 14px; padding: 16px 20px;
+    display: flex; gap: 10px;
+  }
+  .chat-input {
+    flex: 1; background: var(--card); border: 1px solid var(--border);
+    border-radius: 8px; padding: 10px 16px; color: var(--text);
+    font-family: 'DM Sans', sans-serif; font-size: 0.88rem;
+    outline: none; resize: none; min-height: 44px; max-height: 120px;
+  }
+  .chat-input:focus { border-color: var(--accent2); }
+  .chat-input::placeholder { color: var(--text-muted); }
+  .send-btn {
+    background: var(--accent); color: var(--bg);
+    border: none; border-radius: 8px; padding: 10px 18px;
+    cursor: pointer; font-size: 1rem; transition: all 0.2s;
+    display: flex; align-items: center;
+  }
+  .send-btn:hover { background: #f0b030; }
+  .send-btn:disabled { opacity: 0.5; cursor: default; }
+
+  .typing { display: flex; gap: 4px; align-items: center; padding: 4px 0; }
+  .typing span { width: 7px; height: 7px; border-radius: 50%; background: var(--text-muted); animation: bounce 1.4s infinite; }
+  .typing span:nth-child(2) { animation-delay: 0.2s; }
+  .typing span:nth-child(3) { animation-delay: 0.4s; }
+  @keyframes bounce { 0%,80%,100% { transform: scale(0.6); opacity: 0.4; } 40% { transform: scale(1); opacity: 1; } }
+
+  /* ── FLASHCARDS ── */
+  .flashcard-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; }
+  .fc {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 12px; padding: 22px;
+    cursor: pointer; transition: all 0.2s;
+    min-height: 160px; display: flex; flex-direction: column;
+    position: relative; overflow: hidden;
+  }
+  .fc:hover { border-color: var(--accent2); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.3); }
+  .fc-topic { font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; color: var(--accent2); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 12px; }
+  .fc-q { font-size: 0.92rem; color: var(--text-bright); font-weight: 500; line-height: 1.5; flex: 1; }
+  .fc-a {
+    display: none; font-size: 0.87rem; color: var(--accent3);
+    line-height: 1.6; border-top: 1px solid var(--border); margin-top: 12px; padding-top: 12px;
+  }
+  .fc.flipped .fc-q { display: none; }
+  .fc.flipped .fc-a { display: block; }
+  .fc-hint { font-size: 0.72rem; color: var(--text-muted); margin-top: 10px; }
+  .fc-filter { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 20px; }
+  .fc-filter-btn { background: var(--card); border: 1px solid var(--border); border-radius: 6px; padding: 6px 14px; font-size: 0.8rem; color: var(--text-muted); cursor: pointer; transition: all 0.15s; font-family: 'DM Sans', sans-serif; }
+  .fc-filter-btn:hover, .fc-filter-btn.active { background: rgba(41,197,209,0.1); border-color: var(--accent2); color: var(--accent2); }
+
+  /* ── OVERVIEW HOME ── */
+  .overview-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 16px; }
+  .ov-card {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 14px; padding: 22px; cursor: pointer;
+    transition: all 0.2s; text-decoration: none;
+  }
+  .ov-card:hover { border-color: var(--accent); transform: translateY(-2px); box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
+  .ov-icon { font-size: 2rem; margin-bottom: 12px; }
+  .ov-name { font-weight: 600; color: var(--text-bright); font-size: 0.95rem; margin-bottom: 6px; }
+  .ov-desc { font-size: 0.8rem; color: var(--text-muted); line-height: 1.5; }
+  .page-hero { text-align: center; padding: 40px 24px 32px; }
+  .page-hero h1 { font-family: 'Playfair Display', serif; font-size: 2.6rem; color: var(--text-bright); margin-bottom: 10px; }
+  .page-hero h1 em { color: var(--accent); font-style: normal; }
+  .page-hero p { color: var(--text-muted); font-size: 1rem; max-width: 560px; margin: 0 auto; }
+  .stat-row { display: flex; justify-content: center; gap: 32px; margin-top: 24px; flex-wrap: wrap; }
+  .stat { text-align: center; }
+  .stat-num { font-family: 'Playfair Display', serif; font-size: 2rem; color: var(--accent); font-weight: 700; }
+  .stat-label { font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.1em; }
+
+  .section-label {
+    font-family: 'JetBrains Mono', monospace; font-size: 0.68rem;
+    color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.12em;
+    margin-bottom: 16px; padding-bottom: 8px; border-bottom: 1px solid var(--border);
+  }
+
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  @media(max-width: 600px) { .two-col, .options { grid-template-columns: 1fr; } .topics-layout { grid-template-columns: 1fr; } .topic-sidebar { position: static; } }
+
+  .progress-bar-wrap { background: var(--card); border-radius: 4px; height: 6px; margin-top: 16px; overflow: hidden; }
+  .progress-bar { height: 100%; background: linear-gradient(90deg, var(--accent2), var(--accent)); border-radius: 4px; transition: width 0.5s ease; }
+
+  /* text formatting inside cards */
+  b { color: var(--accent); font-weight: 600; }
+  .accent2 { color: var(--accent2); }
+  .green { color: var(--accent3); }
+
+  hr.divider { border: none; border-top: 1px solid var(--border); margin: 20px 0; }
+
+  .tag {
+    display: inline-block; font-size: 0.72rem; padding: 2px 10px;
+    border-radius: 12px; margin: 2px;
+    font-family: 'JetBrains Mono', monospace;
+  }
+  .tag-blue { background: rgba(41,197,209,0.12); color: var(--accent2); border: 1px solid rgba(41,197,209,0.25); }
+  .tag-amber { background: rgba(232,160,32,0.1); color: var(--accent); border: 1px solid rgba(232,160,32,0.25); }
+  .tag-green { background: rgba(127,209,140,0.1); color: var(--accent3); border: 1px solid rgba(127,209,140,0.25); }
+
+  /* overflow table wrapper */
+  .table-wrap { overflow-x: auto; border-radius: 8px; border: 1px solid var(--border); }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">Food<span>Chem</span> ⬡</div>
+  <nav>
+    <button class="nav-btn active" onclick="showPage('home')">Overview</button>
+    <button class="nav-btn" onclick="showPage('topics')">Topics <span class="badge">10</span></button>
+    <button class="nav-btn" onclick="showPage('quiz')">Quiz <span class="badge">10Q</span></button>
+    <button class="nav-btn" onclick="showPage('flash')">Flashcards</button>
+    <button class="nav-btn" onclick="showPage('chat')">AI Tutor 🤖</button>
+  </nav>
+</header>
+
+<!-- ═══════════ HOME ═══════════ -->
+<div id="page-home" class="page active">
+<div class="container">
+  <div class="page-hero">
+    <h1>Masters Food Chemistry<br><em>Revision Guide</em></h1>
+    <p>A comprehensive, examination-focused resource covering all core topics for your mid-semester assessment.</p>
+    <div class="stat-row">
+      <div class="stat"><div class="stat-num">10</div><div class="stat-label">Topics</div></div>
+      <div class="stat"><div class="stat-num">10</div><div class="stat-label">Quiz Questions</div></div>
+      <div class="stat"><div class="stat-num">40+</div><div class="stat-label">Flashcards</div></div>
+      <div class="stat"><div class="stat-num">AI</div><div class="stat-label">Tutor</div></div>
+    </div>
+  </div>
+  <div class="section-label">Core Topics</div>
+  <div class="overview-grid">
+    <div class="ov-card" onclick="openTopic(0)"><div class="ov-icon">💧</div><div class="ov-name">Water</div><div class="ov-desc">Hydrogen bonding, polarity, thermodynamic properties, bound vs free water</div></div>
+    <div class="ov-card" onclick="openTopic(1)"><div class="ov-icon">🍬</div><div class="ov-name">Carbohydrates</div><div class="ov-desc">Starch gelatinisation, Maillard reaction, amylose/amylopectin, retrogradation</div></div>
+    <div class="ov-card" onclick="openTopic(2)"><div class="ov-icon">🌊</div><div class="ov-name">Gelation</div><div class="ov-desc">Gel networks, pectin egg-box model, gelatin triple helix, agar, starch gels</div></div>
+    <div class="ov-card" onclick="openTopic(3)"><div class="ov-icon">🧬</div><div class="ov-name">Proteins</div><div class="ov-desc">Structure levels, denaturation, functional properties, isoelectric point</div></div>
+    <div class="ov-card" onclick="openTopic(4)"><div class="ov-icon">🔬</div><div class="ov-name">Glass Transition (Tg)</div><div class="ov-desc">Amorphous states, WLF equation, plasticisation, food stability implications</div></div>
+    <div class="ov-card" onclick="openTopic(5)"><div class="ov-icon">🍯</div><div class="ov-name">Food Sweeteners</div><div class="ov-desc">Relative sweetness, T1R2/T1R3 receptors, natural vs high-intensity sweeteners</div></div>
+    <div class="ov-card" onclick="openTopic(6)"><div class="ov-icon">⚗️</div><div class="ov-name">Enzymes</div><div class="ov-desc">Michaelis-Menten kinetics, food-relevant enzymes, inhibition, blanching</div></div>
+    <div class="ov-card" onclick="openTopic(7)"><div class="ov-icon">📊</div><div class="ov-name">Water Activity</div><div class="ov-desc">aw measurement, BET equation, sorption isotherms, microbial stability</div></div>
+    <div class="ov-card" onclick="openTopic(8)"><div class="ov-icon">🌈</div><div class="ov-name">Food Colour Chemistry</div><div class="ov-desc">Chlorophylls, carotenoids, anthocyanins, myoglobin, betalains</div></div>
+    <div class="ov-card" onclick="openTopic(9)"><div class="ov-icon">📐</div><div class="ov-name">Colour Measurement</div><div class="ov-desc">CIELAB L*a*b*, ΔE, chroma, hue angle, colorimetry vs spectrophotometry</div></div>
+  </div>
+</div>
+</div>
+
+<!-- ═══════════ TOPICS ═══════════ -->
+<div id="page-topics" class="page">
+<div class="container">
+  <div class="topics-layout">
+    <aside class="topic-sidebar">
+      <div class="sidebar-label">Topics</div>
+      <button class="topic-btn active" onclick="showTopic(0)"><span class="topic-num">01</span>Water</button>
+      <button class="topic-btn" onclick="showTopic(1)"><span class="topic-num">02</span>Carbohydrates</button>
+      <button class="topic-btn" onclick="showTopic(2)"><span class="topic-num">03</span>Gelation</button>
+      <button class="topic-btn" onclick="showTopic(3)"><span class="topic-num">04</span>Proteins</button>
+      <button class="topic-btn" onclick="showTopic(4)"><span class="topic-num">05</span>Glass Transition</button>
+      <button class="topic-btn" onclick="showTopic(5)"><span class="topic-num">06</span>Sweeteners</button>
+      <button class="topic-btn" onclick="showTopic(6)"><span class="topic-num">07</span>Enzymes</button>
+      <button class="topic-btn" onclick="showTopic(7)"><span class="topic-num">08</span>Water Activity</button>
+      <button class="topic-btn" onclick="showTopic(8)"><span class="topic-num">09</span>Colour Chemistry</button>
+      <button class="topic-btn" onclick="showTopic(9)"><span class="topic-num">10</span>Colour Measurement</button>
+    </aside>
+
+    <main>
+
+      <!-- TOPIC 1: WATER -->
+      <div class="topic-content active" id="topic-0">
+        <div class="topic-header" data-emoji="💧">
+          <div class="topic-tag">Topic 01 · Physical Chemistry</div>
+          <div class="topic-title">Water in Food Systems</div>
+          <div class="topic-subtitle">The most abundant and most critical molecule in food science</div>
+        </div>
+        <div class="cards-grid">
+          <div class="card">
+            <div class="card-title">Molecular Structure & Bonding</div>
+            <p>Water (H₂O) has a <b>bent geometry</b> (104.5° H–O–H angle) due to two lone pairs on oxygen. The high electronegativity of O creates a significant <b>dipole moment of 1.85 D</b>, enabling extensive hydrogen bonding. Each water molecule can form up to <b>4 hydrogen bonds</b> (2 donor, 2 acceptor), with an O···O distance of ~2.8 Å and a bond energy of ~20 kJ/mol.</p>
+          </div>
+          <div class="card">
+            <div class="card-title">Anomalous Properties</div>
+            <ul>
+              <li><b>High boiling point</b> (100°C vs −60°C predicted by MW) — due to H-bonding</li>
+              <li><b>High specific heat capacity</b>: 4.18 J g⁻¹ °C⁻¹ (liquid)</li>
+              <li><b>High latent heat of vaporisation</b>: 2257 J g⁻¹ at 100°C</li>
+              <li><b>Maximum density at 4°C</b>: ice less dense than liquid water</li>
+              <li><b>High dielectric constant</b>: 80.1 at 20°C — excellent solvent</li>
+            </ul>
+          </div>
+          <div class="card">
+            <div class="card-title">Bound vs Free Water</div>
+            <p><b>Bound water</b> (monolayer): strongly associated with polar groups; not freezable, not available as solvent; cannot support microbial growth. <b>Multilayer water</b>: less tightly held; can participate in reactions. <b>Free (bulk) water</b>: behaves like pure water; supports enzyme activity, microbial growth, and chemical reactions.</p>
+          </div>
+          <div class="card">
+            <div class="card-title">Colligative Properties</div>
+            <p>Properties dependent on <b>number of solute particles</b>, not their nature: (1) Boiling point elevation: ΔTb = Kb·m; (2) Freezing point depression: ΔTf = Kf·m (Kf = 1.86 K·kg/mol for water); (3) Osmotic pressure: π = MRT; (4) Vapour pressure lowering: ΔP/P° = xsolute (Raoult's Law). These are fundamental to food preservation and texture.</p>
+          </div>
+        </div>
+        <div class="equation-box">
+          <div class="eq-label">Raoult's Law (vapour pressure lowering)</div>
+          P = x_w · P°<br>
+          where: P = vapour pressure of solution, x_w = mole fraction of water, P° = vapour pressure of pure water
+          <div class="eq-vars">Directly related to water activity: aw = P/P° = x_w (for ideal solutions)</div>
+        </div>
+        <div class="highlight-box">
+          <div class="hl-title">⚠ Examination Focus</div>
+          <p>Understand why water's anomalous properties arise from hydrogen bonding. Be able to distinguish bound, multilayer, and free water and explain their roles in food stability. Link to water activity (Topic 8).</p>
+        </div>
+        <div class="ref-box">
+          <div class="ref-title">Key References</div>
+          <div class="ref-item" data-n="1">Damodaran, S., Parkin, K.L. & Fennema, O.R. (2017). <em>Fennema's Food Chemistry</em>, 5th ed. CRC Press. Chapter 2.</div>
+          <div class="ref-item" data-n="2">Belitz, H.D., Grosch, W. & Schieberle, P. (2009). <em>Food Chemistry</em>, 4th ed. Springer. Chapter 1.</div>
+          <div class="ref-item" data-n="3">Franks, F. (2000). <em>Water: A Matrix of Life</em>, 2nd ed. Royal Society of Chemistry.</div>
+        </div>
+      </div>
+
+      <!-- TOPIC 2: CARBOHYDRATES -->
+      <div class="topic-content" id="topic-1">
+        <div class="topic-header" data-emoji="🍬">
+          <div class="topic-tag">Topic 02 · Carbohydrate Chemistry</div>
+          <div class="topic-title">Carbohydrates</div>
+          <div class="topic-subtitle">Structure, reactivity, and functional roles in foods</div>
+        </div>
+        <div class="cards-grid">
+          <div class="card">
+            <div class="card-title">Classification</div>
+            <ul>
+              <li><b>Monosaccharides</b>: glucose, fructose, galactose — aldoses & ketoses</li>
+              <li><b>Disaccharides</b>: sucrose (α-1,2), lactose (β-1,4), maltose (α-1,4)</li>
+              <li><b>Oligosaccharides</b>: DP 3–10 (e.g., raffinose, stachyose)</li>
+              <li><b>Polysaccharides</b>: DP >10 — starch, cellulose, pectin, guar gum</li>
+            </ul>
+          </div>
+          <div class="card">
+            <div class="card-title">Starch Structure</div>
+            <p><b>Amylose</b>: linear α-(1→4) linked glucose; MW 10⁵–10⁶ Da; ~20–25% of starch; forms helical inclusion complexes with iodine (blue-black). <b>Amylopectin</b>: branched α-(1→4) with α-(1→6) branch points every 24–30 glucose units; MW 10⁷–10⁹ Da; ~75–80%; red-purple with iodine. Waxy starches: ~100% amylopectin.</p>
+          </div>
+          <div class="card">
+            <div class="card-title">Starch Gelatinisation</div>
+            <p>Irreversible swelling of starch granules in excess water on heating above the <b>gelatinisation temperature</b> (60–80°C, varies by source). Steps: water absorption → granule swelling → crystallinity loss → amylose leaching → viscosity peak → granule rupture → gel formation on cooling. Measured by <b>DSC</b> and <b>RVA</b> (Rapid Visco Analyser).</p>
+          </div>
+          <div class="card">
+            <div class="card-title">Retrogradation</div>
+            <p>Re-ordering of starch chains during cooling/storage. <b>Amylose</b> retrogradesfirst (hours; responsible for initial gel network and bread firming). <b>Amylopectin</b> retrogradelater (days–weeks; causes staling). Retrogradation is influenced by moisture, temperature, and lipid/emulsifier content. Measured by DSC endotherm at ~50–60°C.</p>
+          </div>
+        </div>
+        <div class="cards-grid">
+          <div class="card">
+            <div class="card-title">Maillard Reaction</div>
+            <p>Non-enzymatic browning between <b>reducing sugars</b> and <b>amino groups</b> (amino acids, peptides, proteins). Three stages: (1) Initial — condensation → Schiff base → Amadori rearrangement product; (2) Intermediate — Amadori product degradation → furfurals, reductones; (3) Final — polymerisation → brown <b>melanoidins</b>. Promoted by: high temperature, low moisture (aw 0.3–0.7), alkaline pH, reactive amino acids (Lys), pentose sugars.</p>
+          </div>
+          <div class="card">
+            <div class="card-title">Caramelisation</div>
+            <p>Thermal degradation of <b>sugars without amino groups</b>. Onset temperatures: fructose 110°C, glucose 160°C, sucrose 160°C, maltose 180°C. Products: caramels (complex mixtures of oligomers, polymers), volatile compounds (furanones, diacetyl), brown pigments. Reactions: dehydration, cyclisation, polymerisation, fragmentation.</p>
+          </div>
+        </div>
+        <div class="highlight-box">
+          <div class="hl-title">Key Distinction</div>
+          <p><b>Maillard reaction</b> requires a nitrogen source (amino acids/proteins) + reducing sugars. <b>Caramelisation</b> is purely sugar pyrolysis — no nitrogen required. Both produce brown colours and flavour compounds but through different mechanisms.</p>
+        </div>
+        <div class="ref-box">
+          <div class="ref-title">Key References</div>
+          <div class="ref-item" data-n="1">BeMiller, J.N. (2019). <em>Carbohydrate Chemistry for Food Scientists</em>, 3rd ed. AACC International Press.</div>
+          <div class="ref-item" data-n="2">Damodaran et al. (2017). Chapter 3 — Carbohydrates.</div>
+          <div class="ref-item" data-n="3">van der Maarel, M.J.E.C. et al. (2002). Properties and applications of starch-converting enzymes. <em>J. Biotechnol.</em> 94, 137–155.</div>
+        </div>
+      </div>
+
+      <!-- TOPIC 3: GELATION -->
+      <div class="topic-content" id="topic-2">
+        <div class="topic-header" data-emoji="🌊">
+          <div class="topic-tag">Topic 03 · Colloid Science</div>
+          <div class="topic-title">Gelation</div>
+          <div class="topic-subtitle">Network formation, gel structure, and rheological behaviour</div>
+        </div>
+        <div class="cards-grid">
+          <div class="card">
+            <div class="card-title">What is a Gel?</div>
+            <p>A gel is a <b>viscoelastic semi-solid</b>: a three-dimensional network that immobilises a liquid phase. Gels exhibit solid-like elastic behaviour (G' > G") at rest but can flow under stress. Characterised by: gel strength (storage modulus G'), gelation temperature, melting temperature, and reversibility.</p>
+          </div>
+          <div class="card">
+            <div class="card-title">Physical vs Chemical Gels</div>
+            <p><b>Physical gels</b>: held by non-covalent interactions (H-bonds, hydrophobic, ionic, van der Waals). Often thermoreversible (e.g., gelatin, agar, pectin). <b>Chemical gels</b>: formed by covalent cross-links. Irreversible (e.g., heat-set protein gels, enzyme cross-linked gels). Most food gels are physical.</p>
+          </div>
+          <div class="card">
+            <div class="card-title">Gelatin</div>
+            <p>Derived from collagen (partial hydrolysis of triple helix). On cooling, partial re-formation of <b>triple helices</b> (junction zones) creates network. Sol-gel transition at ~30–35°C (near body temperature — melt-in-mouth). Gel strength measured in <b>Bloom number</b> (g; 50–300). Concentration for gel: ≥1% w/w. Impaired by: low concentration, high temperature, extreme pH, proteases.</p>
+          </div>
+          <div class="card">
+            <div class="card-title">Pectin Gelation</div>
+            <p><b>High-methoxyl pectin (HM, DE>50%)</b>: gels at low pH (<3.5) and high sugar (>55°Brix) via hydrophobic interactions and H-bonds — junction zones between partially demethylated regions. <b>Low-methoxyl pectin (LM, DE<50%)</b>: gels with divalent cations (Ca²⁺) via the <b>egg-box model</b> — Ca²⁺ cross-links guluronate/galacturonate sequences. Independent of pH and sugar.</p>
+          </div>
+          <div class="card">
+            <div class="card-title">Agar & Carrageenan</div>
+            <p><b>Agar</b>: agarose + agaropectin extracted from red algae. Gels by double helix (coil→helix) transition at ~40°C; melts at ~85°C. Large hysteresis. <b>ι-Carrageenan</b>: ionic gel with Ca²⁺; elastic, thixotropic. <b>κ-Carrageenan</b>: brittle gel; synergistic with locust bean gum. <b>λ-Carrageenan</b>: does not gel; thickener only.</p>
+          </div>
+          <div class="card">
+            <div class="card-title">Protein Gels</div>
+            <p>Heat-set protein gels: denaturation → unfolding → aggregation → network. <b>Fine-stranded gels</b> (low ionic strength, pH far from pI): transparent, elastic. <b>Particulate gels</b> (high ionic strength or near pI): opaque, brittle. Key proteins: whey proteins (β-lactoglobulin), soy proteins, egg white (ovalbumin), myosin (meat gels).</p>
+          </div>
+        </div>
+        <div class="equation-box">
+          <div class="eq-label">Gel Rheology (Small Amplitude Oscillatory Shear)</div>
+          G* = G' + iG''<br>
+          tan δ = G''/G' (loss tangent)<br>
+          <div class="eq-vars">G' = storage (elastic) modulus; G'' = loss (viscous) modulus; tan δ < 1 indicates gel-like behaviour</div>
+        </div>
+        <div class="ref-box">
+          <div class="ref-title">Key References</div>
+          <div class="ref-item" data-n="1">Phillips, G.O. & Williams, P.A. (eds) (2009). <em>Handbook of Hydrocolloids</em>, 2nd ed. Woodhead.</div>
+          <div class="ref-item" data-n="2">Nishinari, K. (1997). Rheological and DSC study of sol-gel transition in aqueous dispersions. <em>Colloid Polym. Sci.</em> 275, 1093–1107.</div>
+          <div class="ref-item" data-n="3">Damodaran et al. (2017). Chapter 12 — Dispersed Systems.</div>
+        </div>
+      </div>
+
+      <!-- TOPIC 4: PROTEINS -->
+      <div class="topic-content" id="topic-3">
+        <div class="topic-header" data-emoji="🧬">
+          <div class="topic-tag">Topic 04 · Protein Chemistry</div>
+          <div class="topic-title">Proteins in Food Systems</div>
+          <div class="topic-subtitle">Structure, denaturation, and functional properties</div>
+        </div>
+        <div class="cards-grid">
+          <div class="card">
+            <div class="card-title">Structural Hierarchy</div>
+            <ul>
+              <li><b>Primary</b>: amino acid sequence; peptide bonds; determined by DNA</li>
+              <li><b>Secondary</b>: α-helix (3.6 residues/turn, H-bonds i to i+4), β-sheet (parallel/antiparallel, H-bonds between strands), β-turns, random coil</li>
+              <li><b>Tertiary</b>: 3D folding; stabilised by disulfide bonds, H-bonds, hydrophobic interactions, electrostatic/salt bridges, van der Waals</li>
+              <li><b>Quaternary</b>: assembly of multiple polypeptides (subunits)</li>
+            </ul>
+          </div>
+          <div class="card">
+            <div class="card-title">Denaturation</div>
+            <p>Loss of higher-order structure without hydrolysis of peptide bonds. Causes: <b>Heat</b> (disrupts H-bonds, increases hydrophobic effect entropy), <b>pH extremes</b> (alter ionisation, disrupt electrostatic interactions), <b>Chaotropic agents</b> (urea, guanidinium HCl), <b>Organic solvents</b>, <b>High pressure</b>. Usually irreversible in food processing. Enthalpy change measured by DSC (denaturation temperature Td, enthalpy ΔHd).</p>
+          </div>
+          <div class="card">
+            <div class="card-title">Isoelectric Point (pI)</div>
+            <p>The pH at which net charge = 0 and <b>protein solubility is minimum</b>. Important because: (1) Protein precipitates at pI (used in isoelectric precipitation of casein at pH 4.6); (2) Emulsification and foaming are lowest at pI; (3) Electrophoretic mobility = 0. pI values: casein ~4.6, β-lactoglobulin ~5.2, ovalbumin ~4.7, myosin ~5.4, soy 11S ~4.6.</p>
+          </div>
+          <div class="card">
+            <div class="card-title">Functional Properties</div>
+            <ul>
+              <li><b>Solubility</b>: NSI (Nitrogen Solubility Index); affects all functions</li>
+              <li><b>Water holding capacity</b>: critical in meat, dairy</li>
+              <li><b>Gelation</b>: heat-set or cold-set; WHC, texture</li>
+              <li><b>Emulsification</b>: adsorption at oil-water interface; surface hydrophobicity key</li>
+              <li><b>Foaming</b>: adsorption at air-water interface; flexibility vs rigidity tradeoff</li>
+              <li><b>Maillard browning</b>: ε-amino group of Lys most reactive</li>
+            </ul>
+          </div>
+        </div>
+        <div class="two-col">
+          <div class="highlight-box">
+            <div class="hl-title">Surface Hydrophobicity</div>
+            <p>A key determinant of emulsification and foaming. Measured by fluorescent probes (ANS, CPA) or hydrophobic interaction chromatography. Partial denaturation can expose hydrophobic residues and improve functional properties — the basis for protein modification technologies.</p>
+          </div>
+          <div class="highlight-box">
+            <div class="hl-title">Disulfide Bonds</div>
+            <p>Covalent cross-links between Cys residues. Critical in gluten network (gliadin + glutenin) — disulfide interchange during dough mixing creates viscoelastic network. Thiol–disulfide exchange catalysed by SSL and DATEM in breadmaking.</p>
+          </div>
+        </div>
+        <div class="ref-box">
+          <div class="ref-title">Key References</div>
+          <div class="ref-item" data-n="1">Damodaran et al. (2017). Chapter 5 — Amino Acids, Peptides, and Proteins.</div>
+          <div class="ref-item" data-n="2">Belitz et al. (2009). Chapter 1 — Amino Acids, Peptides, and Proteins.</div>
+          <div class="ref-item" data-n="3">Kinsella, J.E. (1976). Functional properties of food proteins. <em>CRC Crit. Rev. Food Sci. Nutr.</em> 7, 219–280.</div>
+        </div>
+      </div>
+
+      <!-- TOPIC 5: GLASS TRANSITION -->
+      <div class="topic-content" id="topic-4">
+        <div class="topic-header" data-emoji="🔬">
+          <div class="topic-tag">Topic 05 · Physical State</div>
+          <div class="topic-title">Glass Transition Temperature</div>
+          <div class="topic-subtitle">Amorphous state physics and food stability</div>
+        </div>
+        <div class="cards-grid">
+          <div class="card">
+            <div class="card-title">Amorphous vs Crystalline</div>
+            <p><b>Crystalline</b>: long-range molecular order; sharp melting point (Tm); lower free energy. <b>Amorphous</b>: disordered; no sharp melting point. Below Tg → <b>glassy state</b> (rigid, brittle, very high viscosity ~10¹² Pa·s). Above Tg → <b>rubbery state</b> (mobile, viscoelastic, ~10⁸–10⁹ Pa·s). Most freeze-dried and spray-dried foods are amorphous.</p>
+          </div>
+          <div class="card">
+            <div class="card-title">WLF Equation</div>
+            <div class="eq-label" style="font-size:0.7rem;color:var(--text-muted);margin-bottom:6px;">Williams-Landel-Ferry (1955)</div>
+            <div style="font-family:'JetBrains Mono';font-size:0.85rem;color:var(--accent2);line-height:1.8">log(aT) = −C₁(T − Tg) / (C₂ + T − Tg)</div>
+            <p style="font-size:0.83rem;margin-top:10px;line-height:1.6">Universal constants (at Tg): C₁ = 17.44, C₂ = 51.6 K. aT = ratio of relaxation times. Predicts <b>dramatic increase in molecular mobility</b> above Tg — reaction rates increase orders of magnitude.</p>
+          </div>
+          <div class="card">
+            <div class="card-title">Plasticisation by Water</div>
+            <p>Water is the most potent plasticiser in food: it increases free volume → <b>lowers Tg</b>. The Gordon–Taylor equation predicts Tg of mixtures: Tg = (w₁Tg₁ + kw₂Tg₂)/(w₁ + kw₂). For anhydrous sucrose Tg ≈ 65°C; at aw = 0.33, Tg ≈ 25°C. Below Tg the material is stable; above Tg reactions accelerate (crystallisation, collapse, stickiness).</p>
+          </div>
+          <div class="card">
+            <div class="card-title">Food Stability Implications</div>
+            <ul>
+              <li><b>Caking</b>: powder above Tg → viscous flow → particle fusion (spray-dried powders)</li>
+              <li><b>Crystallisation</b>: amorphous lactose crystallises above Tg at aw>0.3</li>
+              <li><b>Crispness loss</b>: extruded snacks soften above Tg at high aw</li>
+              <li><b>Freeze-drying</b>: collapse temperature ≈ Tg of maximally freeze-concentrated solution (Tg')</li>
+              <li><b>Maillard reaction</b>: greatly accelerated above Tg</li>
+            </ul>
+          </div>
+        </div>
+        <div class="highlight-box">
+          <div class="hl-title">Tg Measurement</div>
+          <p>Primarily by <b>Differential Scanning Calorimetry (DSC)</b>: detected as a step change in heat capacity (Cp) baseline — not a peak like melting. Also measured by Dynamic Mechanical Analysis (DMA), Dielectric Analysis, and Thermomechanical Analysis (TMA).</p>
+        </div>
+        <div class="ref-box">
+          <div class="ref-title">Key References</div>
+          <div class="ref-item" data-n="1">Slade, L. & Levine, H. (1991). Beyond water activity: Recent advances. <em>CRC Crit. Rev. Food Sci. Nutr.</em> 30, 115–360.</div>
+          <div class="ref-item" data-n="2">Roos, Y.H. (1995). <em>Phase Transitions in Foods</em>. Academic Press.</div>
+          <div class="ref-item" data-n="3">Williams, M.L., Landel, R.F. & Ferry, J.D. (1955). The temperature dependence of relaxation mechanisms. <em>J. Am. Chem. Soc.</em> 77, 3701–3707.</div>
+        </div>
+      </div>
+
+      <!-- TOPIC 6: SWEETENERS -->
+      <div class="topic-content" id="topic-5">
+        <div class="topic-header" data-emoji="🍯">
+          <div class="topic-tag">Topic 06 · Sensory Chemistry</div>
+          <div class="topic-title">Food Sweeteners</div>
+          <div class="topic-subtitle">Natural and high-intensity sweeteners, receptor mechanisms</div>
+        </div>
+        <div class="cards-grid">
+          <div class="card">
+            <div class="card-title">Sweet Taste Receptor</div>
+            <p>Sweetness is perceived via the <b>T1R2/T1R3 heterodimer</b>, a G protein-coupled receptor (GPCR). The receptor has a large extracellular Venus flytrap domain (VFD) on T1R2 where sugars and sweeteners bind, and a cysteine-rich domain (CRD) + transmembrane domain (TMD) for some high-intensity sweeteners (e.g., cyclamate). Signal transduction via <b>α-gustducin → PLC → IP₃ → Ca²⁺ release → TRPM5 → depolarisation</b>.</p>
+          </div>
+          <div class="card">
+            <div class="card-title">AH/B/X Theory</div>
+            <p>Shallenberger & Acree (1967): sweetness requires an <b>AH-B system</b> — a proton donor (AH) and electronegative acceptor (B) separated by ~2.5–4 Å, which H-bonds to a complementary site on the receptor. Kier (1972) extended to AH/B/X: X = hydrophobic binding site. Explains why many different molecules taste sweet. Not sufficient to explain all sweeteners — superseded by structural biology of T1R2/T1R3.</p>
+          </div>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <tr><th>Sweetener</th><th>Type</th><th>Relative Sweetness (sucrose=1)</th><th>Energy (kcal/g)</th><th>Notes</th></tr>
+            <tr><td>Sucrose</td><td>Natural</td><td>1.0</td><td>4</td><td>Reference standard</td></tr>
+            <tr><td>Fructose</td><td>Natural</td><td>1.2–1.8</td><td>4</td><td>Sweeter cold; used in HFCS</td></tr>
+            <tr><td>Glucose</td><td>Natural</td><td>0.7–0.8</td><td>4</td><td>Directly fermentable</td></tr>
+            <tr><td>Lactose</td><td>Natural</td><td>0.2–0.4</td><td>4</td><td>Milk sugar; low sweetness</td></tr>
+            <tr><td>Sorbitol</td><td>Sugar alcohol</td><td>0.5–0.7</td><td>2.6</td><td>Humectant; laxative effect >50g</td></tr>
+            <tr><td>Xylitol</td><td>Sugar alcohol</td><td>~1.0</td><td>2.4</td><td>Cooling effect; dental caries prevention</td></tr>
+            <tr><td>Acesulfame-K</td><td>Artificial</td><td>~200</td><td>0</td><td>Heat stable; often blended</td></tr>
+            <tr><td>Aspartame</td><td>Artificial</td><td>180–200</td><td>~0</td><td>Unstable at high T/pH; PKU warning</td></tr>
+            <tr><td>Saccharin</td><td>Artificial</td><td>300–500</td><td>0</td><td>Bitter metallic aftertaste</td></tr>
+            <tr><td>Sucralose</td><td>Artificial</td><td>600</td><td>0</td><td>Chlorinated sucrose; heat stable</td></tr>
+            <tr><td>Steviol glycosides</td><td>Natural-derived</td><td>200–400</td><td>0</td><td>From <em>Stevia rebaudiana</em>; rebaudioside A cleanest</td></tr>
+            <tr><td>Thaumatin</td><td>Protein</td><td>2000–3000</td><td>4</td><td>Protein sweetener; flavour modifier</td></tr>
+          </table>
+        </div>
+        <div class="highlight-box">
+          <div class="hl-title">Synergy</div>
+          <p>Blending sweeteners (e.g., acesulfame-K + aspartame; sucralose + sugar) often produces <b>synergistic sweetness</b> — the mixture is sweeter than the sum of parts. This allows reduction in total sweetener use and improved sensory profile (masking aftertastes).</p>
+        </div>
+        <div class="ref-box">
+          <div class="ref-title">Key References</div>
+          <div class="ref-item" data-n="1">Shallenberger, R.S. & Acree, T.E. (1967). Molecular theory of sweet taste. <em>Nature</em> 216, 480–482.</div>
+          <div class="ref-item" data-n="2">Lim, J. (2011). Hedonic scaling: A review of methods and theory. <em>Food Qual. Prefer.</em> 22, 733–747.</div>
+          <div class="ref-item" data-n="3">Damodaran et al. (2017). Chapter 9 — Sweeteners.</div>
+        </div>
+      </div>
+
+      <!-- TOPIC 7: ENZYMES -->
+      <div class="topic-content" id="topic-6">
+        <div class="topic-header" data-emoji="⚗️">
+          <div class="topic-tag">Topic 07 · Biochemistry</div>
+          <div class="topic-title">Food Enzymes</div>
+          <div class="topic-subtitle">Kinetics, food applications, and control strategies</div>
+        </div>
+        <div class="cards-grid">
+          <div class="card">
+            <div class="card-title">Michaelis-Menten Kinetics</div>
+            <div class="equation-box" style="margin:0 0 10px">
+              v = V<sub>max</sub>[S] / (K<sub>m</sub> + [S])
+            </div>
+            <ul>
+              <li><b>Vmax</b>: maximum velocity (enzyme saturated); Vmax = kcat·[E]T</li>
+              <li><b>Km</b>: Michaelis constant = [S] at v = Vmax/2; reflects enzyme-substrate affinity (low Km = high affinity)</li>
+              <li><b>kcat</b> (turnover number): mol substrate converted per mol enzyme per sec</li>
+              <li><b>kcat/Km</b>: specificity constant; measure of catalytic efficiency</li>
+            </ul>
+          </div>
+          <div class="card">
+            <div class="card-title">Enzyme Inhibition</div>
+            <ul>
+              <li><b>Competitive</b>: inhibitor binds active site; apparent Km increases, Vmax unchanged; overcome by excess [S]</li>
+              <li><b>Uncompetitive</b>: inhibitor binds only ES complex; both Km and Vmax decrease (same Vmax/Km)</li>
+              <li><b>Non-competitive</b>: inhibitor binds E or ES; Vmax decreases, Km unchanged (pure) or changes (mixed)</li>
+              <li><b>Irreversible</b>: covalent modification of active site residue</li>
+            </ul>
+          </div>
+          <div class="card">
+            <div class="card-title">Temperature & pH Effects</div>
+            <p>Rate doubles per 10°C rise (Q10 ≈ 2) up to optimal temperature, then drops sharply due to denaturation. Arrhenius equation: k = A·e^(−Ea/RT). pH optimum varies: pepsin pH 2, amylase pH 6–7, trypsin pH 8. Extremes alter ionisation of active site residues (His, Asp, Glu, Cys, Lys) and protein conformation.</p>
+          </div>
+          <div class="card">
+            <div class="card-title">Polyphenol Oxidase (PPO)</div>
+            <p>Cu-containing enzyme. Catalyses: <b>phenols → o-quinones</b> → brown polymers (enzymatic browning). Requires O₂. Substrate: chlorogenic acid (apple, potato), catechins (tea). Prevention: (1) blanching, (2) acidification (pH<4), (3) sulfite/ascorbate addition, (4) chelation (EDTA), (5) modified atmosphere (low O₂), (6) cold storage.</p>
+          </div>
+          <div class="card">
+            <div class="card-title">Food-Relevant Enzymes</div>
+            <ul>
+              <li><b>α-Amylase</b>: endo-cleaves α-(1→4); bread volume, starch liquefaction</li>
+              <li><b>Protease</b>: cheese ripening (chymosin), meat tenderisation (papain, bromelain)</li>
+              <li><b>Lipase</b>: cheese flavour (fatty acids); rancidity in cereals</li>
+              <li><b>Lipoxygenase</b>: oxidises PUFAs → off-flavours; bleaches flour (desirable)</li>
+              <li><b>Pectinase</b>: fruit juice clarification, wine processing</li>
+              <li><b>Transglutaminase</b>: cross-links Gln-Lys; restructured meat, improved dough</li>
+            </ul>
+          </div>
+          <div class="card">
+            <div class="card-title">Lineweaver-Burk Plot</div>
+            <p>Double reciprocal plot: <b>1/v vs 1/[S]</b>. Linear transformation of Michaelis-Menten: 1/v = (Km/Vmax)·(1/[S]) + 1/Vmax. Slope = Km/Vmax; y-intercept = 1/Vmax; x-intercept = −1/Km. Used to determine inhibition type and kinetic constants, though prone to error at low [S]. Modern: non-linear regression preferred.</p>
+          </div>
+        </div>
+        <div class="ref-box">
+          <div class="ref-title">Key References</div>
+          <div class="ref-item" data-n="1">Whitaker, J.R. (1994). <em>Principles of Enzymology for the Food Sciences</em>, 2nd ed. Marcel Dekker.</div>
+          <div class="ref-item" data-n="2">Damodaran et al. (2017). Chapter 7 — Enzymes.</div>
+          <div class="ref-item" data-n="3">Vámos-Vigyázó, L. (1981). Polyphenol oxidase and peroxidase in fruits and vegetables. <em>CRC Crit. Rev. Food Sci. Nutr.</em> 15, 49–127.</div>
+        </div>
+      </div>
+
+      <!-- TOPIC 8: WATER ACTIVITY -->
+      <div class="topic-content" id="topic-7">
+        <div class="topic-header" data-emoji="📊">
+          <div class="topic-tag">Topic 08 · Physical Chemistry</div>
+          <div class="topic-title">Water Activity</div>
+          <div class="topic-subtitle">Thermodynamic measure of water availability in foods</div>
+        </div>
+        <div class="cards-grid">
+          <div class="card">
+            <div class="card-title">Definition & Measurement</div>
+            <div class="equation-box" style="margin:0 0 10px">a<sub>w</sub> = p/p° = ERH/100
+            </div>
+            <p style="font-size:0.85rem;line-height:1.6">p = partial pressure of water vapour above food; p° = vapour pressure of pure water at same T. Equivalent to <b>Equilibrium Relative Humidity (ERH)/100</b>. Range: 0 (anhydrous) to 1.0 (pure water). Measured by <b>chilled mirror dew point hygrometry</b> (most accurate) or capacitance sensors.</p>
+          </div>
+          <div class="card">
+            <div class="card-title">Sorption Isotherms</div>
+            <p>Relationship between aw and moisture content at constant T. <b>Type II sigmoid</b> isotherm typical for foods. Three regions: (1) <b>Monolayer region</b> (aw 0–0.25): tightly bound water; most stable; (2) <b>Multilayer region</b> (aw 0.25–0.7): dissolution of solutes; (3) <b>Capillary/free water</b> (aw >0.7): free water; microbial growth. <b>Hysteresis</b>: desorption > adsorption isotherm (due to capillary effects, polymer matrix changes).</p>
+          </div>
+          <div class="card">
+            <div class="card-title">BET Equation</div>
+            <div class="equation-box" style="margin:0 0 10px;font-size:0.8rem">
+              aw / [m(1−aw)] = 1/(m₀C) + (C−1)/(m₀C) · aw
+            </div>
+            <p style="font-size:0.85rem;line-height:1.6">Brunauer-Emmett-Teller: m = moisture content, m₀ = <b>monolayer moisture content</b>, C = constant related to binding energy. Monolayer: most stable moisture content; maximum shelf life. Plot aw/[m(1-aw)] vs aw → slope and intercept give m₀ and C.</p>
+          </div>
+          <div class="card">
+            <div class="card-title">Microbial Stability</div>
+            <ul>
+              <li>Most spoilage bacteria: aw <b>≥ 0.91</b></li>
+              <li>Most yeasts: aw <b>≥ 0.88</b></li>
+              <li>Most moulds: aw <b>≥ 0.70–0.80</b></li>
+              <li>Xerophilic moulds (e.g., <em>Aspergillus</em>): aw <b>≥ 0.61</b></li>
+              <li><em>S. aureus</em> (toxin): aw <b>≥ 0.86</b></li>
+              <li><em>C. botulinum</em> (type A/B): aw <b>≥ 0.93</b></li>
+            </ul>
+          </div>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <tr><th>aw Range</th><th>Chemical Reactions</th><th>Example Foods</th></tr>
+            <tr><td>0.95–1.0</td><td>All reactions active; microbial growth</td><td>Fresh meat, fish, vegetables</td></tr>
+            <tr><td>0.80–0.95</td><td>Maillard fast; enzymatic browning; oxidation</td><td>Processed cheese, cured meats, jam</td></tr>
+            <tr><td>0.60–0.80</td><td>Maillard moderate; lipid oxidation increasing</td><td>Dry fruits, flour, cereals</td></tr>
+            <tr><td>0.30–0.60</td><td>Maillard minimum; lipid oxidation begins</td><td>Crackers, cookies</td></tr>
+            <tr><td>0–0.30</td><td>Lipid oxidation high; very low reaction rates</td><td>Freeze-dried foods, anhydrous</td></tr>
+          </table>
+        </div>
+        <div class="ref-box">
+          <div class="ref-title">Key References</div>
+          <div class="ref-item" data-n="1">Labuza, T.P. (1980). The effect of water activity on reaction kinetics. <em>Food Technol.</em> 34(4), 36–41.</div>
+          <div class="ref-item" data-n="2">Damodaran et al. (2017). Chapter 2 — Water and Ice.</div>
+          <div class="ref-item" data-n="3">Van den Berg, C. & Bruin, S. (1981). Water activity and its estimation in food systems. In: <em>Water Activity: Influences on Food Quality</em>. Academic Press.</div>
+        </div>
+      </div>
+
+      <!-- TOPIC 9: COLOUR CHEMISTRY -->
+      <div class="topic-content" id="topic-8">
+        <div class="topic-header" data-emoji="🌈">
+          <div class="topic-tag">Topic 09 · Pigment Chemistry</div>
+          <div class="topic-title">Food Colour Chemistry</div>
+          <div class="topic-subtitle">Natural pigments: structure, stability, and transformations</div>
+        </div>
+        <div class="cards-grid">
+          <div class="card">
+            <div class="card-title">Chlorophylls</div>
+            <p>Green pigments in all photosynthetic plant tissues. <b>Chlorophyll a</b> (blue-green, λmax 430/663 nm) and <b>b</b> (yellow-green, λmax 453/642 nm). Porphyrin ring with central <b>Mg²⁺</b>. Phytol tail confers hydrophobicity. On heating/acidification: Mg²⁺ → H⁺ → <b>olive-green pheophytin</b>. Further hydrolysis → pheophorbide. Preservation: alkaline blanching (adds Mg²⁺), copper chlorophyllin (approved additive E141).</p>
+          </div>
+          <div class="card">
+            <div class="card-title">Carotenoids</div>
+            <p>Polyene pigments: C₄₀ terpenoids with conjugated double-bond chromophore. <b>Carotenes</b> (hydrocarbons): β-carotene (orange, λmax ~450 nm), lycopene (red, λmax ~470 nm). <b>Xanthophylls</b> (oxygenated): lutein, zeaxanthin, astaxanthin (salmon). Cis/trans isomerisation on processing → loss of colour intensity. Prooxidant at high concentrations; antioxidant at low. Lipid-soluble → stable to acid/base but sensitive to light and oxygen.</p>
+          </div>
+          <div class="card">
+            <div class="card-title">Anthocyanins</div>
+            <p>Water-soluble flavonoid pigments (glycosides of anthocyanidins). Colour highly <b>pH-dependent</b>: pH<3 → flavylium cation (<b>red</b>); pH 4–5 → carbinol base (colourless); pH 6–7 → quinonoidal base (<b>blue/purple</b>); pH>8 → chalcone (yellow). Also affected by: co-pigmentation (+stability), metal complexation (Fe³⁺, Al³⁺ → blue), temperature, light, SO₂. ~700 known; found in berries, red cabbage, grape, elderberry.</p>
+          </div>
+          <div class="card">
+            <div class="card-title">Myoglobin & Meat Colour</div>
+            <p>Heme protein (MW 16,700 Da); Fe in porphyrin ring. Three forms: <b>Deoxymyoglobin</b> (Fe²⁺, no ligand): purple-red; <b>Oxymyoglobin</b> (Fe²⁺, O₂): bright red (desirable); <b>Metmyoglobin</b> (Fe³⁺): brown (oxidised, undesirable). Interconversion: reducing conditions maintain Fe²⁺; high O₂ → oxymyoglobin; moderate/low O₂ → metmyoglobin. MAP: high-O₂ (70–80%) maintains oxymyoglobin; CO + low-O₂ maintains red colour (some markets).</p>
+          </div>
+          <div class="card">
+            <div class="card-title">Betalains</div>
+            <p>N-containing pigments unique to order Caryophyllales (beetroot, cactus pear, amaranth). <b>Betacyanins</b> (red-violet, λmax ~540 nm): betanin (most common). <b>Betaxanthins</b> (yellow-orange, λmax ~480 nm): vulgaxanthin. Not co-occurring with anthocyanins. Stable at pH 3–7; sensitive to heat, light, O₂. Used as natural food colourants (E162).</p>
+          </div>
+          <div class="card">
+            <div class="card-title">Curcumin & Other Pigments</div>
+            <p><b>Curcumin</b> (turmeric): yellow diketone; pH-sensitive (yellow → orange-red >pH 8); light-sensitive; E100. <b>Riboflavin</b>: yellow flavin; E101. <b>Caramel</b>: Maillard-derived brown (E150). <b>Annatto</b> (bixin, norbixin from <em>Bixa orellana</em>): yellow-orange; E160b. <b>Paprika</b> (capsanthin, capsorubin): red carotenoids; E160c.</p>
+          </div>
+        </div>
+        <div class="ref-box">
+          <div class="ref-title">Key References</div>
+          <div class="ref-item" data-n="1">Hendry, G.A.F. & Houghton, J.D. (eds) (1996). <em>Natural Food Colorants</em>, 2nd ed. Blackie Academic.</div>
+          <div class="ref-item" data-n="2">Damodaran et al. (2017). Chapter 10 — Colorants.</div>
+          <div class="ref-item" data-n="3">Stintzing, F.C. & Carle, R. (2004). Functional properties of anthocyanins and betalains. <em>Trends Food Sci. Technol.</em> 15, 19–38.</div>
+        </div>
+      </div>
+
+      <!-- TOPIC 10: COLOUR MEASUREMENT -->
+      <div class="topic-content" id="topic-9">
+        <div class="topic-header" data-emoji="📐">
+          <div class="topic-tag">Topic 10 · Analytical Methods</div>
+          <div class="topic-title">Colour Measurement</div>
+          <div class="topic-subtitle">CIELAB, colorimetry, and spectrophotometry in food analysis</div>
+        </div>
+        <div class="cards-grid">
+          <div class="card">
+            <div class="card-title">CIE XYZ Colour Space (1931)</div>
+            <p>The CIE (Commission Internationale de l'Éclairage) tristimulus system. <b>X, Y, Z</b> are virtual primaries derived from human cone responses. Y ≈ luminance (perceived lightness). CIE chromaticity coordinates: x = X/(X+Y+Z), y = Y/(X+Y+Z). Foundation for all modern colour spaces. Dependent on: illuminant (D65 = daylight standard for food), standard observer (2°, 10°), and geometry (0°/45° or integrating sphere).</p>
+          </div>
+          <div class="card">
+            <div class="card-title">CIELAB (L*a*b*) Colour Space</div>
+            <ul>
+              <li><b>L*</b> (0–100): lightness; 0 = black, 100 = white</li>
+              <li><b>a*</b>: green (−) to red (+); range ≈ −128 to +127</li>
+              <li><b>b*</b>: blue (−) to yellow (+); range ≈ −128 to +127</li>
+              <li><b>Chroma</b>: C*ab = √(a*² + b*²) — saturation/vividness</li>
+              <li><b>Hue angle</b>: h°ab = arctan(b*/a*); 0° = red, 90° = yellow, 180° = green, 270° = blue</li>
+            </ul>
+          </div>
+        </div>
+        <div class="equation-box">
+          <div class="eq-label">CIELAB Colour Difference (ΔE*ab)</div>
+          ΔE*ab = √[ (ΔL*)² + (Δa*)² + (Δb*)² ]<br>
+          <div class="eq-vars">ΔE*ab &lt;1: imperceptible; 1–2: barely perceptible; 2–3.5: perceptible; &gt;3.5: clearly visible colour difference</div>
+        </div>
+        <div class="cards-grid">
+          <div class="card">
+            <div class="card-title">Instruments</div>
+            <ul>
+              <li><b>Colorimeter</b>: measures filtered L*, a*, b* directly; inexpensive; less versatile</li>
+              <li><b>Spectrophotometer/Spectroradiometer</b>: measures full reflectance spectrum (360–780 nm); calculates any colour space; most versatile and accurate</li>
+              <li><b>Hunter Lab colorimeter</b>: older scale (L, a, b; slightly different formulae); still used in industry; not identical to CIELAB</li>
+              <li><b>Imaging colorimetry</b>: multi- or hyperspectral imaging; spatial colour distribution</li>
+            </ul>
+          </div>
+          <div class="card">
+            <div class="card-title">Measurement Geometry</div>
+            <p><b>0°/45°</b> (or 45°/0°): illuminates at 0°, measures at 45°; excludes specular (mirror) reflection; measures colour as perceived visually. <b>d/8° (integrating sphere)</b>: diffuse illumination; can include (SPIN) or exclude (SPEX) specular; better for heterogeneous foods. Choice affects results — report geometry, illuminant, and observer with all colour data. <b>SPIN vs SPEX</b>: SPIN used for opacity/translucency, SPEX for surface colour.</p>
+          </div>
+          <div class="card">
+            <div class="card-title">Transmittance vs Reflectance</div>
+            <p><b>Reflectance</b>: used for opaque/solid foods (meat, bread, cheese). <b>Transmittance</b>: for clear/translucent liquids (fruit juice, wine, beer); measured as absorbance: A = −log₁₀(T). <b>Total appearance</b>: includes gloss, haze, translucency. For liquids, the <b>Beer-Lambert law</b> applies: A = εcl (ε = molar extinction coefficient, c = concentration, l = path length).</p>
+          </div>
+          <div class="card">
+            <div class="card-title">CIEDE2000 (ΔE₀₀)</div>
+            <p>Advanced colour difference formula (ISO/CIE 2014). Corrects for non-uniformity of CIELAB space particularly in blue, chroma, and lightness regions. Adds weighting functions: kL, kC, kH and interactive terms RT (rotation term for blue). <b>Recommended for food colour difference calculations</b> where high precision is needed (e.g., process control, sensory correlation).</p>
+          </div>
+        </div>
+        <div class="ref-box">
+          <div class="ref-title">Key References</div>
+          <div class="ref-item" data-n="1">MacDougall, D.B. (ed.) (2002). <em>Colour in Food</em>. Woodhead Publishing.</div>
+          <div class="ref-item" data-n="2">Leon, K. et al. (2006). Color measurement in L*, a*, b* units from RGB digital images. <em>Food Res. Int.</em> 39, 1084–1091.</div>
+          <div class="ref-item" data-n="3">CIE (2004). <em>Colorimetry</em>, 3rd ed. Publication 15:2004. CIE Central Bureau, Vienna.</div>
+        </div>
+      </div>
+
+    </main>
+  </div>
+</div>
+</div>
+
+<!-- ═══════════ QUIZ ═══════════ -->
+<div id="page-quiz" class="page">
+<div class="container">
+  <div class="quiz-wrap">
+    <div class="quiz-intro">
+      <h2>Mid-Semester Practice Quiz</h2>
+      <p>10 Masters-level questions covering all core topics. Select an answer to reveal the explanation.</p>
+      <div class="progress-bar-wrap" style="max-width:300px;margin:12px auto 0">
+        <div class="progress-bar" id="quiz-progress" style="width:0%"></div>
+      </div>
+      <p style="font-size:0.78rem;color:var(--text-muted);margin-top:6px" id="quiz-progress-text">0 / 10 answered</p>
+    </div>
+    <div id="quiz-questions"></div>
+    <div class="quiz-actions">
+      <button class="btn-primary" onclick="showScore()">Show Final Score</button>
+      <button class="btn-secondary" onclick="resetQuiz()">Reset Quiz</button>
+    </div>
+    <div class="score-display" id="score-display">
+      <div class="score-circle" id="score-circle">
+        <div class="score-num" id="score-num">0</div>
+        <div class="score-den">/ 10</div>
+      </div>
+      <div class="score-msg" id="score-msg">—</div>
+      <div class="score-sub" id="score-sub"></div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ═══════════ FLASHCARDS ═══════════ -->
+<div id="page-flash" class="page">
+<div class="container">
+  <div class="page-hero" style="padding-top:20px">
+    <h1 style="font-size:1.8rem">Flashcards</h1>
+    <p>Click any card to reveal the answer. Filter by topic to focus your revision.</p>
+  </div>
+  <div class="fc-filter" id="fc-filter"></div>
+  <div class="flashcard-grid" id="fc-grid"></div>
+</div>
+</div>
+
+<!-- ═══════════ CHATBOT ═══════════ -->
+<div id="page-chat" class="page">
+<div class="container">
+  <div class="chat-layout">
+    <div class="page-hero" style="padding: 20px 0 24px">
+      <h1 style="font-size:1.8rem">AI Food Chemistry Tutor</h1>
+      <p>Ask about any food chemistry concept. Powered by Claude.</p>
+    </div>
+    <div class="chat-header">
+      <div class="chat-avatar">🧪</div>
+      <div>
+        <div class="chat-name">FoodChem AI Tutor</div>
+        <div class="chat-status">● Ready to help with your revision</div>
+      </div>
+    </div>
+    <div class="chat-messages" id="chat-messages">
+      <div class="msg ai">
+        <div class="msg-avatar">🧪</div>
+        <div class="msg-bubble">Hello! I'm your Food Chemistry AI tutor, specialising in Masters-level food science. I can help you understand difficult concepts across water chemistry, carbohydrates, gelation, proteins, glass transition, sweeteners, enzymes, water activity, colour chemistry, and colour measurement. What would you like to explore?</div>
+      </div>
+    </div>
+    <div class="suggested-qs">
+      <button class="sug-btn" onclick="sendSuggested(this)">Explain the WLF equation</button>
+      <button class="sug-btn" onclick="sendSuggested(this)">Why does aw affect shelf life?</button>
+      <button class="sug-btn" onclick="sendSuggested(this)">Anthocyanin colour and pH</button>
+      <button class="sug-btn" onclick="sendSuggested(this)">Difference between Km and Vmax</button>
+      <button class="sug-btn" onclick="sendSuggested(this)">How does pectin gel form?</button>
+      <button class="sug-btn" onclick="sendSuggested(this)">What is the egg-box model?</button>
+    </div>
+    <div class="chat-input-area">
+      <textarea class="chat-input" id="chat-input" placeholder="Ask a food chemistry question..." rows="1"
+        onkeydown="if(event.key==='Enter'&&!event.shiftKey){event.preventDefault();sendChat()}"
+        oninput="this.style.height='auto';this.style.height=Math.min(this.scrollHeight,120)+'px'"></textarea>
+      <button class="send-btn" id="send-btn" onclick="sendChat()">➤</button>
+    </div>
+  </div>
+</div>
+</div>
+
+<script>
+// ─── PAGE NAVIGATION ───
+function showPage(id) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('page-' + id).classList.add('active');
+  event.currentTarget.classList.add('active');
+}
+
+function openTopic(n) {
+  showPage('topics');
+  document.querySelectorAll('.nav-btn')[1].classList.add('active');
+  document.querySelectorAll('.nav-btn')[0].classList.remove('active');
+  showTopic(n);
+}
+
+// ─── TOPIC NAVIGATION ───
+function showTopic(n) {
+  document.querySelectorAll('.topic-content').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.topic-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('topic-' + n).classList.add('active');
+  document.querySelectorAll('.topic-btn')[n].classList.add('active');
+}
+
+// ─── QUIZ ───
+const quizData = [
+  {
+    topic: "Water Activity",
+    q: "The BET (Brunauer-Emmett-Teller) equation applied to food moisture sorption isotherms primarily allows estimation of which parameter?",
+    opts: ["The rate constant of lipid oxidation at low aw", "The monolayer moisture content (m₀) for maximum shelf stability", "The critical water activity for mould growth", "The glass transition temperature of the food matrix"],
+    ans: 1,
+    exp: "<strong>Monolayer moisture content (m₀)</strong> is the primary output of BET analysis. It represents the amount of water tightly bound to polar sites in a monolayer, and corresponds to the region of maximum shelf stability where chemical reaction rates are at their minimum."
+  },
+  {
+    topic: "Glass Transition",
+    q: "The Williams-Landel-Ferry (WLF) equation describes the temperature dependence of molecular mobility above Tg. Which of the following is the correct form?",
+    opts: ["log(aT) = −C₁(T − Tg) / (C₂ + T − Tg)", "log(aT) = C₁(T − Tg) × (C₂ − T + Tg)", "k = A · e^(−Ea/RT)", "ΔTf = Kf · m"],
+    ans: 0,
+    exp: "The correct WLF equation is <strong>log(aT) = −C₁(T − Tg)/(C₂ + T − Tg)</strong>, where universal constants C₁ = 17.44 and C₂ = 51.6 K apply when Tg is the reference temperature. aT is the shift factor (ratio of relaxation times). Options C and D are the Arrhenius equation and freezing point depression, respectively."
+  },
+  {
+    topic: "Protein Chemistry",
+    q: "A food scientist measures the Td (denaturation temperature) of β-lactoglobulin by DSC and observes a shift to lower temperature at pH 5.2. What is the most likely explanation?",
+    opts: ["Increased disulfide bonding at this pH stabilises the protein", "pH 5.2 is near the pI of β-lactoglobulin, minimising electrostatic repulsion and reducing stability", "β-Lactoglobulin undergoes hydrolysis at pH 5.2", "Higher ionic strength at pH 5.2 increases denaturation temperature"],
+    ans: 1,
+    exp: "The pI of β-lactoglobulin is approximately <strong>5.2</strong>. At the isoelectric point, net charge = 0, which minimises electrostatic repulsion between molecules and reduces the energy required to unfold the protein. This results in a <strong>lower Td</strong>. Conversely, at pH values far from the pI, increased electrostatic repulsion can destabilise the native structure."
+  },
+  {
+    topic: "Carbohydrates",
+    q: "During starch retrogradation in a stored wheat bread loaf, which component is primarily responsible for long-term staling (days to weeks) and what is the mechanism?",
+    opts: ["Amylose; forms inclusion complexes with lipids causing hardening", "Amylopectin; recrystallisation of branch chain segments creates rigid network", "Free glucose; osmotic effects reduce moisture in the crumb", "Gluten network; progressive disulfide bond formation"],
+    ans: 1,
+    exp: "<strong>Amylopectin recrystallisation</strong> is the primary driver of long-term bread staling. While amylose retrograde rapidly (within hours) and contributes to initial gel formation, it is the slow (days–weeks) reordering of amylopectin branch chains into crystalline structures that progressively increases crumb firmness. This is confirmed by DSC — stale bread shows a reheating endotherm at ~50–60°C corresponding to amylopectin crystal melting."
+  },
+  {
+    topic: "Gelation",
+    q: "Low-methoxyl (LM) pectin (DE <50%) forms gels through which primary mechanism, and what is the required co-factor?",
+    opts: ["Hydrophobic interactions and hydrogen bonding; high sucrose concentration (>55°Brix)", "Electrostatic cross-linking via the egg-box model; divalent cations (Ca²⁺)", "Triple helix formation upon cooling; no cofactor required", "Covalent disulfide bridging; thiol-oxidising conditions"],
+    ans: 1,
+    exp: "LM pectin gels form via the <strong>egg-box model</strong> — Ca²⁺ ions coordinate with the carboxylate groups of adjacent galacturonate sequences, forming ionic cross-links (junction zones). This is independent of sugar concentration and pH, distinguishing it from HM pectin which requires low pH and high sugar. The \"egg-box\" describes how Ca²⁺ sits within the cavity formed by two aligned pectin chains."
+  },
+  {
+    topic: "Colour Measurement",
+    q: "In the CIELAB colour space, a food sample has coordinates L* = 52, a* = −18, b* = +24. What is the correct interpretation?",
+    opts: ["Medium lightness; reddish and yellowish", "Medium lightness; greenish and yellowish; calculate C*ab = √(18²+24²) ≈ 30", "Dark; bluish and greenish", "Bright; bluish and reddish"],
+    ans: 1,
+    exp: "L* = 52 indicates <strong>medium lightness</strong>. Negative a* (−18) indicates a <strong>green</strong> hue component. Positive b* (+24) indicates a <strong>yellow</strong> component. Chroma C*ab = √(18² + 24²) = √(324 + 576) = √900 = <strong>30</strong>, indicating moderate saturation. Hue angle h° = arctan(24/−18) adjusted to second quadrant ≈ 127°, which falls in the yellow-green region."
+  },
+  {
+    topic: "Sweeteners",
+    q: "Aspartame is unstable under certain processing conditions. Which combination of conditions causes the most rapid degradation?",
+    opts: ["Low temperature and neutral pH", "High temperature and alkaline pH", "Dry conditions and acidic pH", "Refrigeration and acidic pH"],
+    ans: 1,
+    exp: "Aspartame (L-aspartyl-L-phenylalanine methyl ester) degrades rapidly under <strong>high temperature and alkaline pH</strong>. Degradation products include diketopiperazine (DKP, major product — cyclic, loses sweetness) and then aspartylphenylalanine, aspartic acid, and phenylalanine. This is why aspartame is not suitable for baking or UHT processing. At neutral-to-acidic pH and ambient temperature it is reasonably stable (shelf life 12–24 months in carbonated beverages)."
+  },
+  {
+    topic: "Enzymes",
+    q: "A competitive inhibitor is added to an enzymatic reaction. Using the Michaelis-Menten framework, which of the following correctly describes the kinetic outcome?",
+    opts: ["Both Km and Vmax increase proportionally", "Apparent Km increases; Vmax remains unchanged; effect can be overcome by excess substrate", "Vmax decreases; Km is unchanged", "Both Km and Vmax decrease"],
+    ans: 1,
+    exp: "A <strong>competitive inhibitor</strong> competes with substrate for the active site, increasing the <em>apparent Km</em> (lower apparent affinity for substrate). However, it does NOT alter Vmax because at sufficiently high [S], substrate outcompetes the inhibitor and the enzyme can still reach maximum velocity. On a Lineweaver-Burk plot: lines intersect at y-axis (same 1/Vmax) but x-intercept shifts (different −1/Km)."
+  },
+  {
+    topic: "Colour Chemistry",
+    q: "A food scientist is formulating a red beverage using anthocyanins from black carrot. At which pH should the product be maintained to optimise colour stability and intensity?",
+    opts: ["pH 7.0 (neutral) to stabilise the quinonoidal base form", "pH 2.5–3.5 to maintain the flavylium cation (red) form", "pH 8.0 to encourage chalcone formation", "pH 5.5–6.0 to prevent carbinol base formation"],
+    ans: 1,
+    exp: "Anthocyanins exist in four pH-dependent structural forms. The <strong>flavylium cation</strong> (red, fully coloured) predominates at <strong>pH < 3</strong>. Above pH 3, the colourless <em>carbinol pseudobase</em> forms rapidly (pH 4–5), then the <em>quinonoidal base</em> (blue/purple, pH 6–7), then the open-chain <em>chalcone</em> (colourless/yellow, pH>8). Therefore, maintaining pH <strong>2.5–3.5</strong> is optimal for red colour in beverages."
+  },
+  {
+    topic: "Water",
+    q: "Which of the following best explains why water has a disproportionately high boiling point (100°C) relative to its molecular weight (18 Da), compared to hydrogen sulfide (H₂S, MW 34 Da, bp −60°C)?",
+    opts: ["Water has a higher dipole moment due to its larger molecular mass", "Extensive three-dimensional hydrogen bond network in liquid water requires significantly more energy to disrupt than the weaker van der Waals interactions in H₂S", "Water molecules have a linear geometry that allows closer packing", "The higher viscosity of water prevents vaporisation at lower temperatures"],
+    ans: 1,
+    exp: "Water's anomalously high boiling point arises from its <strong>extensive hydrogen bond network</strong>. Each water molecule can form up to 4 H-bonds (2 donor, 2 acceptor), with energy ~20 kJ/mol each. This cooperative network requires significantly more thermal energy to overcome than the weak van der Waals forces in H₂S (which cannot H-bond effectively due to low S electronegativity). This is a classic example of how intermolecular forces govern thermodynamic properties."
+  }
+];
+
+let answered = new Array(10).fill(null);
+
+function buildQuiz() {
+  const container = document.getElementById('quiz-questions');
+  container.innerHTML = quizData.map((q, i) => `
+    <div class="q-card" id="qcard-${i}">
+      <div class="q-number">Question ${i+1} / 10 · ${q.topic}</div>
+      <div class="q-text">${q.q}</div>
+      <div class="options">
+        ${q.opts.map((o, j) => `
+          <button class="opt" data-q="${i}" data-opt="${j}" onclick="selectOpt(${i},${j})">${String.fromCharCode(65+j)}. ${o}</button>
+        `).join('')}
+      </div>
+      <div class="explanation" id="exp-${i}">${q.exp}</div>
+    </div>
+  `).join('');
+}
+
+function selectOpt(qi, oi) {
+  if (answered[qi] !== null) return;
+  answered[qi] = oi;
+  const qcard = document.getElementById('qcard-' + qi);
+  qcard.querySelectorAll('.opt').forEach(btn => {
+    btn.disabled = true;
+    const idx = parseInt(btn.dataset.opt);
+    if (idx === quizData[qi].ans) btn.classList.add('correct');
+    else if (idx === oi) btn.classList.add('wrong');
+  });
+  document.getElementById('exp-' + qi).classList.add('show');
+  updateProgress();
+}
+
+function updateProgress() {
+  const done = answered.filter(a => a !== null).length;
+  document.getElementById('quiz-progress').style.width = (done / 10 * 100) + '%';
+  document.getElementById('quiz-progress-text').textContent = `${done} / 10 answered`;
+}
+
+function showScore() {
+  const score = answered.filter((a, i) => a === quizData[i].ans).length;
+  const sd = document.getElementById('score-display');
+  sd.classList.add('show');
+  document.getElementById('score-num').textContent = score;
+  const msgs = ['Keep Revising', 'Good Start', 'Solid Progress', 'Well Done!', 'Excellent!'];
+  const subs = ['Review all topics carefully', 'Focus on the topics you missed', 'You are getting there!', 'Strong understanding!', 'Outstanding performance!'];
+  const tier = Math.floor(score / 2.5);
+  document.getElementById('score-msg').textContent = msgs[Math.min(tier, 4)];
+  document.getElementById('score-sub').textContent = subs[Math.min(tier, 4)];
+  const c = score >= 8 ? '#7fd18c' : score >= 5 ? '#e8a020' : '#e05c6a';
+  document.getElementById('score-circle').style.borderColor = c;
+  document.getElementById('score-num').style.color = c;
+  sd.scrollIntoView({behavior:'smooth'});
+}
+
+function resetQuiz() {
+  answered = new Array(10).fill(null);
+  buildQuiz();
+  document.getElementById('score-display').classList.remove('show');
+  updateProgress();
+}
+
+buildQuiz();
+
+// ─── FLASHCARDS ───
+const fcData = [
+  {topic:"Water", q:"What is the H–O–H bond angle in water and why?", a:"104.5° — bent geometry due to 2 lone pairs on O pushing bonding pairs closer together (VSEPR theory)."},
+  {topic:"Water", q:"State two anomalous properties of water and their cause.", a:"High bp (100°C) and high specific heat (4.18 J/g°C) — both due to extensive H-bonding network requiring high energy to disrupt."},
+  {topic:"Water", q:"Define water activity (aw) mathematically.", a:"aw = p/p° = ERH/100, where p = vapour pressure of food, p° = vapour pressure of pure water at the same temperature."},
+  {topic:"Carbohydrates", q:"Distinguish amylose from amylopectin structurally.", a:"Amylose: linear α-(1→4) glucan, ~20-25% of starch. Amylopectin: branched α-(1→4) with α-(1→6) branches every 24-30 residues, ~75-80% of starch."},
+  {topic:"Carbohydrates", q:"What is the Amadori rearrangement product in the Maillard reaction?", a:"The 1-amino-1-deoxy-2-ketose formed by rearrangement of the N-glycoside (Schiff base). It is the key intermediate of the initial Maillard reaction phase."},
+  {topic:"Carbohydrates", q:"Which sugar is most reactive in the Maillard reaction and why?", a:"Pentoses (e.g., ribose, xylose) are most reactive due to their open-chain configuration. Among hexoses, reducing sugars with free carbonyl groups react. Lactose > maltose > glucose > fructose."},
+  {topic:"Gelation", q:"What is Bloom number for gelatin?", a:"A measure of gel strength: the weight (in grams) required to depress a 12.5 mm diameter plunger 4 mm into a 6.67% gelatin gel at 10°C. Range: 50–300 g Bloom."},
+  {topic:"Gelation", q:"How does HM pectin gel differ mechanistically from LM pectin gel?", a:"HM (DE>50%): gels at pH<3.5 + >55°Brix via hydrophobic + H-bond interactions. LM (DE<50%): gels with Ca²⁺ via egg-box model at any sugar/pH — ionic cross-linking."},
+  {topic:"Gelation", q:"Define the loss tangent (tan δ) and what value indicates a gel.", a:"tan δ = G''/G' (viscous/elastic modulus ratio). tan δ < 1 indicates solid-like (gel) behaviour; tan δ > 1 indicates liquid-like behaviour."},
+  {topic:"Proteins", q:"Name the four levels of protein structure.", a:"Primary (sequence), Secondary (α-helix, β-sheet), Tertiary (3D fold), Quaternary (subunit assembly)."},
+  {topic:"Proteins", q:"What is the isoelectric point (pI) and why does protein solubility minimise there?", a:"pI = pH at which net charge = 0. Minimum solubility occurs because electrostatic repulsion is minimised, allowing hydrophobic interactions to dominate and promote protein aggregation/precipitation."},
+  {topic:"Proteins", q:"What bonds stabilise tertiary protein structure?", a:"Disulfide bonds (covalent), H-bonds, hydrophobic interactions, electrostatic/salt bridges, van der Waals forces. The hydrophobic effect is the dominant driving force for folding."},
+  {topic:"Glass Transition", q:"State the WLF equation and define all terms.", a:"log(aT) = −C₁(T−Tg)/(C₂+T−Tg). aT = relaxation time shift factor, T = temperature, Tg = glass transition temperature, C₁=17.44, C₂=51.6 K (universal constants at Tg)."},
+  {topic:"Glass Transition", q:"Why is water described as a plasticiser for food biopolymers?", a:"Water increases free volume in the amorphous matrix, reducing chain-chain interactions and mobility barriers → lowers Tg. Even small amounts of water dramatically reduce Tg (e.g., anhydrous sucrose Tg≈65°C drops to ~25°C at aw=0.33)."},
+  {topic:"Glass Transition", q:"How is Tg measured in food systems?", a:"Primarily by DSC (detected as a step change in heat capacity Cp baseline, not a peak). Also DMA (loss modulus E'' peak), dielectric analysis, and thermomechanical analysis (TMA)."},
+  {topic:"Sweeteners", q:"Name the sweet taste receptor and its signal transduction pathway.", a:"T1R2/T1R3 GPCR heterodimer → α-gustducin → PLCβ2 → IP₃ → intracellular Ca²⁺ release → TRPM5 channel → membrane depolarisation → sweet nerve signal."},
+  {topic:"Sweeteners", q:"Rank these sweeteners by relative sweetness: sucrose, sucralose, aspartame, stevia, fructose.", a:"Sucralose (~600x) > Stevia (~200-400x) ≈ Aspartame (~180-200x) > Fructose (~1.2-1.8x) > Sucrose (1.0x)."},
+  {topic:"Sweeteners", q:"Why is aspartame unsuitable for baking?", a:"Aspartame degrades at high temperatures and alkaline pH, forming diketopiperazine (DKP, bitter, no sweetness), aspartylphenylalanine, and amino acids. Thermostable alternatives (sucralose, acesulfame-K) are preferred."},
+  {topic:"Enzymes", q:"Define Km (Michaelis constant) and what it tells you about an enzyme.", a:"Km = substrate concentration [S] at which v = Vmax/2. A low Km indicates high substrate affinity (enzyme is half-saturated at low [S]). A high Km indicates low affinity."},
+  {topic:"Enzymes", q:"How does polyphenol oxidase (PPO) cause enzymatic browning and how can it be controlled?", a:"PPO (Cu-containing) + O₂ → oxidises phenols to o-quinones → polymerise to brown melanins. Control: blanching (enzyme inactivation), low pH (<4), ascorbate/sulfite (reducing agents), modified atmosphere (↓O₂), cold storage."},
+  {topic:"Enzymes", q:"What is the specificity constant and why is it useful?", a:"kcat/Km — measures catalytic efficiency per unit enzyme and per unit [S]. Best metric for comparing enzyme performance with different substrates. Higher kcat/Km = more efficient catalyst."},
+  {topic:"Water Activity", q:"List the minimum aw for growth of: most bacteria, most yeasts, most moulds.", a:"Most bacteria: aw ≥ 0.91. Most yeasts: aw ≥ 0.88. Most moulds: aw ≥ 0.70–0.80. Xerophilic moulds can grow at aw ≥ 0.61."},
+  {topic:"Water Activity", q:"Explain moisture sorption isotherm hysteresis in foods.", a:"Desorption (drying) and adsorption (rewetting) isotherms do not coincide — desorption gives higher moisture at same aw. Causes: capillary effects (ink-bottle effect), irreversible changes to food matrix structure, dissolution/crystallisation of solutes."},
+  {topic:"Colour Chemistry", q:"How does chlorophyll become pheophytin and what colour change occurs?", a:"Mg²⁺ in the porphyrin ring is replaced by H⁺ under acidic conditions (e.g., cooking, low pH). Pheophytin = olive/drab green. Further hydrolysis of phytol tail → pheophorbide (also olive-green)."},
+  {topic:"Colour Chemistry", q:"Name the three forms of myoglobin, their iron state, and colour.", a:"Deoxymyoglobin (Fe²⁺, no O₂): purple-red. Oxymyoglobin (Fe²⁺ + O₂): bright red. Metmyoglobin (Fe³⁺): brown (oxidised form, undesirable in fresh meat)."},
+  {topic:"Colour Chemistry", q:"What structural feature gives carotenoids their colour and why?", a:"Extended conjugated polyene system (multiple alternating C=C and C–C bonds). The π-electron delocalisation across the chromophore allows absorption of visible light. More conjugated double bonds = longer wavelength absorption = redder colour."},
+  {topic:"Colour Measurement", q:"Define L*, a*, and b* in the CIELAB colour space.", a:"L* = lightness (0=black, 100=white). a* = red (+) to green (−) axis. b* = yellow (+) to blue (−) axis. Origin is neutral/achromatic."},
+  {topic:"Colour Measurement", q:"Calculate ΔE*ab if ΔL*=2, Δa*=1, Δb*=3.", a:"ΔE*ab = √(2²+1²+3²) = √(4+1+9) = √14 ≈ 3.74. This would be a clearly perceptible colour difference (threshold ~2–3.5)."},
+  {topic:"Colour Measurement", q:"What is the difference between SPIN and SPEX geometry in spectrophotometry?", a:"SPIN (Specular component Included): total reflectance including mirror-like specular reflection; measures gloss + colour. SPEX (Specular component Excluded): excludes specular reflection; measures only surface colour as perceived visually. SPEX recommended for surface colour of foods."}
+];
+
+const topics = [...new Set(fcData.map(f=>f.topic))];
+let activeFilter = 'All';
+
+function buildFlashcards(filter='All') {
+  const grid = document.getElementById('fc-grid');
+  const filtered = filter === 'All' ? fcData : fcData.filter(f=>f.topic===filter);
+  grid.innerHTML = filtered.map((f,i)=>`
+    <div class="fc" onclick="this.classList.toggle('flipped')">
+      <div class="fc-topic">${f.topic}</div>
+      <div class="fc-q">${f.q}</div>
+      <div class="fc-a">${f.a}</div>
+      <div class="fc-hint">Tap to reveal answer</div>
+    </div>
+  `).join('');
+}
+
+function buildFCFilter() {
+  const wrap = document.getElementById('fc-filter');
+  const all = ['All', ...topics];
+  wrap.innerHTML = all.map(t=>`<button class="fc-filter-btn ${t==='All'?'active':''}" onclick="setFCFilter('${t}',this)">${t}</button>`).join('');
+}
+
+function setFCFilter(t, btn) {
+  activeFilter = t;
+  document.querySelectorAll('.fc-filter-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  buildFlashcards(t);
+}
+
+buildFCFilter();
+buildFlashcards();
+
+// ─── CHATBOT ───
+const chatHistory = [];
+const SYSTEM_PROMPT = `You are an expert food chemistry tutor for Masters-level food science students preparing for a mid-semester examination. You have deep knowledge of:
+- Water chemistry (H-bonding, thermodynamics, bound vs free water, colligative properties)
+- Carbohydrates (starch structure, gelatinisation, retrogradation, Maillard reaction, caramelisation)
+- Gelation (physical vs chemical gels, gelatin, pectin egg-box model, agar, carrageenan, protein gels, rheology)
+- Proteins (structure levels, denaturation, pI, functional properties, disulfide bonds)
+- Glass transition temperature (amorphous state, WLF equation, plasticisation, food stability)
+- Food sweeteners (T1R2/T1R3 receptor, AH/B theory, relative sweetness values, aspartame, sucralose, stevia)
+- Enzymes (Michaelis-Menten, Km, Vmax, kcat, inhibition types, polyphenol oxidase, lipase, amylase, transglutaminase)
+- Water activity (aw definition, BET equation, sorption isotherms, microbial stability, hysteresis)
+- Food colour chemistry (chlorophylls, carotenoids, anthocyanins, myoglobin, betalains, curcumin)
+- Colour measurement (CIELAB L*a*b*, ΔE, chroma, hue angle, CIELAB vs Hunter Lab, colorimetry vs spectrophotometry)
+
+Reference authoritative sources: Fennema's Food Chemistry (Damodaran et al., 5th ed.), Belitz et al. Food Chemistry (4th ed.), BeMiller Carbohydrate Chemistry, Roos Phase Transitions in Foods, Phillips & Williams Handbook of Hydrocolloids, MacDougall Colour in Food.
+
+Provide clear, accurate, Masters-level explanations. Use equations where relevant. Be concise but thorough. Format responses clearly using short paragraphs. When relevant, mention practical food science applications.`;
+
+async function sendChat() {
+  const input = document.getElementById('chat-input');
+  const msg = input.value.trim();
+  if (!msg) return;
+  input.value = '';
+  input.style.height = 'auto';
+
+  appendMsg('user', msg);
+  chatHistory.push({role:'user', content: msg});
+
+  const sendBtn = document.getElementById('send-btn');
+  sendBtn.disabled = true;
+
+  // Add typing indicator
+  const typingId = 'typing-' + Date.now();
+  const typingEl = document.createElement('div');
+  typingEl.className = 'msg ai'; typingEl.id = typingId;
+  typingEl.innerHTML = `<div class="msg-avatar">🧪</div><div class="msg-bubble"><div class="typing"><span></span><span></span><span></span></div></div>`;
+  document.getElementById('chat-messages').appendChild(typingEl);
+  scrollChat();
+
+  try {
+    const resp = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({
+        model: 'claude-sonnet-4-20250514',
+        max_tokens: 1000,
+        system: SYSTEM_PROMPT,
+        messages: chatHistory
+      })
+    });
+    const data = await resp.json();
+    const reply = data.content?.[0]?.text || 'Sorry, I could not generate a response. Please try again.';
+    document.getElementById(typingId).remove();
+    appendMsg('ai', reply);
+    chatHistory.push({role:'assistant', content: reply});
+  } catch(e) {
+    document.getElementById(typingId).remove();
+    appendMsg('ai', 'Connection error. Please check your network and try again.');
+  }
+  sendBtn.disabled = false;
+}
+
+function appendMsg(role, text) {
+  const div = document.createElement('div');
+  div.className = 'msg ' + role;
+  const avatar = role === 'ai' ? '🧪' : '👤';
+  // Simple formatting: convert **text** to bold, and newlines to <br>
+  const formatted = text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>').replace(/\n/g, '<br>');
+  div.innerHTML = `<div class="msg-avatar">${avatar}</div><div class="msg-bubble">${formatted}</div>`;
+  document.getElementById('chat-messages').appendChild(div);
+  scrollChat();
+}
+
+function scrollChat() {
+  const cm = document.getElementById('chat-messages');
+  cm.scrollTop = cm.scrollHeight;
+}
+
+function sendSuggested(btn) {
+  document.getElementById('chat-input').value = btn.textContent;
+  sendChat();
+}
+</script>
+</body>
+</html>
