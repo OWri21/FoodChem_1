@@ -268,80 +268,6 @@
   .score-msg { font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--text-bright); margin-bottom: 8px; }
   .score-sub { color: var(--text-muted); font-size: 0.88rem; }
 
-  /* ── CHATBOT ── */
-  .chat-layout { max-width: 820px; margin: 0 auto; }
-  .chat-header {
-    background: var(--surface); border: 1px solid var(--border);
-    border-radius: 14px 14px 0 0; padding: 20px 24px;
-    display: flex; align-items: center; gap: 14px;
-  }
-  .chat-avatar {
-    width: 44px; height: 44px; border-radius: 50%;
-    background: linear-gradient(135deg, var(--accent), var(--accent2));
-    display: flex; align-items: center; justify-content: center;
-    font-size: 1.3rem; flex-shrink: 0;
-  }
-  .chat-name { font-weight: 600; color: var(--text-bright); font-size: 0.95rem; }
-  .chat-status { font-size: 0.78rem; color: var(--accent3); }
-
-  .chat-messages {
-    background: var(--card);
-    border-left: 1px solid var(--border); border-right: 1px solid var(--border);
-    height: 460px; overflow-y: auto; padding: 20px;
-    display: flex; flex-direction: column; gap: 16px;
-    scroll-behavior: smooth;
-  }
-  .chat-messages::-webkit-scrollbar { width: 4px; }
-  .chat-messages::-webkit-scrollbar-track { background: transparent; }
-  .chat-messages::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
-
-  .msg { display: flex; gap: 12px; animation: fadeIn 0.3s ease; max-width: 90%; }
-  .msg.user { flex-direction: row-reverse; align-self: flex-end; }
-  .msg-avatar {
-    width: 32px; height: 32px; border-radius: 50%; flex-shrink: 0;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 0.9rem;
-  }
-  .msg.ai .msg-avatar { background: linear-gradient(135deg, var(--accent), var(--accent2)); }
-  .msg.user .msg-avatar { background: var(--card2); }
-  .msg-bubble {
-    padding: 12px 16px; border-radius: 12px;
-    font-size: 0.88rem; line-height: 1.6;
-  }
-  .msg.ai .msg-bubble { background: var(--surface); color: var(--text); border-radius: 4px 12px 12px 12px; border: 1px solid var(--border); }
-  .msg.user .msg-bubble { background: rgba(232,160,32,0.12); color: var(--text-bright); border-radius: 12px 4px 12px 12px; border: 1px solid rgba(232,160,32,0.25); }
-
-  .suggested-qs { padding: 12px 20px; background: var(--surface); border-left: 1px solid var(--border); border-right: 1px solid var(--border); display: flex; gap: 8px; flex-wrap: wrap; }
-  .sug-btn { background: var(--card); border: 1px solid var(--border); border-radius: 20px; padding: 5px 14px; font-size: 0.78rem; color: var(--text-muted); cursor: pointer; transition: all 0.15s; font-family: 'DM Sans', sans-serif; }
-  .sug-btn:hover { border-color: var(--accent2); color: var(--accent2); }
-
-  .chat-input-area {
-    background: var(--surface); border: 1px solid var(--border);
-    border-radius: 0 0 14px 14px; padding: 16px 20px;
-    display: flex; gap: 10px;
-  }
-  .chat-input {
-    flex: 1; background: var(--card); border: 1px solid var(--border);
-    border-radius: 8px; padding: 10px 16px; color: var(--text);
-    font-family: 'DM Sans', sans-serif; font-size: 0.88rem;
-    outline: none; resize: none; min-height: 44px; max-height: 120px;
-  }
-  .chat-input:focus { border-color: var(--accent2); }
-  .chat-input::placeholder { color: var(--text-muted); }
-  .send-btn {
-    background: var(--accent); color: var(--bg);
-    border: none; border-radius: 8px; padding: 10px 18px;
-    cursor: pointer; font-size: 1rem; transition: all 0.2s;
-    display: flex; align-items: center;
-  }
-  .send-btn:hover { background: #f0b030; }
-  .send-btn:disabled { opacity: 0.5; cursor: default; }
-
-  .typing { display: flex; gap: 4px; align-items: center; padding: 4px 0; }
-  .typing span { width: 7px; height: 7px; border-radius: 50%; background: var(--text-muted); animation: bounce 1.4s infinite; }
-  .typing span:nth-child(2) { animation-delay: 0.2s; }
-  .typing span:nth-child(3) { animation-delay: 0.4s; }
-  @keyframes bounce { 0%,80%,100% { transform: scale(0.6); opacity: 0.4; } 40% { transform: scale(1); opacity: 1; } }
 
   /* ── FLASHCARDS ── */
   .flashcard-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; }
@@ -427,7 +353,6 @@
     <button class="nav-btn" onclick="showPage('topics')">Topics <span class="badge">10</span></button>
     <button class="nav-btn" onclick="showPage('quiz')">Quiz <span class="badge">10Q</span></button>
     <button class="nav-btn" onclick="showPage('flash')">Flashcards</button>
-    <button class="nav-btn" onclick="showPage('chat')">AI Tutor 🤖</button>
   </nav>
 </header>
 
@@ -441,7 +366,6 @@
       <div class="stat"><div class="stat-num">10</div><div class="stat-label">Topics</div></div>
       <div class="stat"><div class="stat-num">10</div><div class="stat-label">Quiz Questions</div></div>
       <div class="stat"><div class="stat-num">40+</div><div class="stat-label">Flashcards</div></div>
-      <div class="stat"><div class="stat-num">AI</div><div class="stat-label">Tutor</div></div>
     </div>
   </div>
   <div class="section-label">Core Topics</div>
@@ -1027,45 +951,6 @@
 </div>
 </div>
 
-<!-- ═══════════ CHATBOT ═══════════ -->
-<div id="page-chat" class="page">
-<div class="container">
-  <div class="chat-layout">
-    <div class="page-hero" style="padding: 20px 0 24px">
-      <h1 style="font-size:1.8rem">AI Food Chemistry Tutor</h1>
-      <p>Ask about any food chemistry concept. Powered by Claude.</p>
-    </div>
-    <div class="chat-header">
-      <div class="chat-avatar">🧪</div>
-      <div>
-        <div class="chat-name">FoodChem AI Tutor</div>
-        <div class="chat-status">● Ready to help with your revision</div>
-      </div>
-    </div>
-    <div class="chat-messages" id="chat-messages">
-      <div class="msg ai">
-        <div class="msg-avatar">🧪</div>
-        <div class="msg-bubble">Hello! I'm your Food Chemistry AI tutor, specialising in Masters-level food science. I can help you understand difficult concepts across water chemistry, carbohydrates, gelation, proteins, glass transition, sweeteners, enzymes, water activity, colour chemistry, and colour measurement. What would you like to explore?</div>
-      </div>
-    </div>
-    <div class="suggested-qs">
-      <button class="sug-btn" onclick="sendSuggested(this)">Explain the WLF equation</button>
-      <button class="sug-btn" onclick="sendSuggested(this)">Why does aw affect shelf life?</button>
-      <button class="sug-btn" onclick="sendSuggested(this)">Anthocyanin colour and pH</button>
-      <button class="sug-btn" onclick="sendSuggested(this)">Difference between Km and Vmax</button>
-      <button class="sug-btn" onclick="sendSuggested(this)">How does pectin gel form?</button>
-      <button class="sug-btn" onclick="sendSuggested(this)">What is the egg-box model?</button>
-    </div>
-    <div class="chat-input-area">
-      <textarea class="chat-input" id="chat-input" placeholder="Ask a food chemistry question..." rows="1"
-        onkeydown="if(event.key==='Enter'&&!event.shiftKey){event.preventDefault();sendChat()}"
-        oninput="this.style.height='auto';this.style.height=Math.min(this.scrollHeight,120)+'px'"></textarea>
-      <button class="send-btn" id="send-btn" onclick="sendChat()">➤</button>
-    </div>
-  </div>
-</div>
-</div>
-
 <script>
 // ─── PAGE NAVIGATION ───
 function showPage(id) {
@@ -1292,88 +1177,6 @@ function setFCFilter(t, btn) {
 buildFCFilter();
 buildFlashcards();
 
-// ─── CHATBOT ───
-const chatHistory = [];
-const SYSTEM_PROMPT = `You are an expert food chemistry tutor for Masters-level food science students preparing for a mid-semester examination. You have deep knowledge of:
-- Water chemistry (H-bonding, thermodynamics, bound vs free water, colligative properties)
-- Carbohydrates (starch structure, gelatinisation, retrogradation, Maillard reaction, caramelisation)
-- Gelation (physical vs chemical gels, gelatin, pectin egg-box model, agar, carrageenan, protein gels, rheology)
-- Proteins (structure levels, denaturation, pI, functional properties, disulfide bonds)
-- Glass transition temperature (amorphous state, WLF equation, plasticisation, food stability)
-- Food sweeteners (T1R2/T1R3 receptor, AH/B theory, relative sweetness values, aspartame, sucralose, stevia)
-- Enzymes (Michaelis-Menten, Km, Vmax, kcat, inhibition types, polyphenol oxidase, lipase, amylase, transglutaminase)
-- Water activity (aw definition, BET equation, sorption isotherms, microbial stability, hysteresis)
-- Food colour chemistry (chlorophylls, carotenoids, anthocyanins, myoglobin, betalains, curcumin)
-- Colour measurement (CIELAB L*a*b*, ΔE, chroma, hue angle, CIELAB vs Hunter Lab, colorimetry vs spectrophotometry)
-
-Reference authoritative sources: Fennema's Food Chemistry (Damodaran et al., 5th ed.), Belitz et al. Food Chemistry (4th ed.), BeMiller Carbohydrate Chemistry, Roos Phase Transitions in Foods, Phillips & Williams Handbook of Hydrocolloids, MacDougall Colour in Food.
-
-Provide clear, accurate, Masters-level explanations. Use equations where relevant. Be concise but thorough. Format responses clearly using short paragraphs. When relevant, mention practical food science applications.`;
-
-async function sendChat() {
-  const input = document.getElementById('chat-input');
-  const msg = input.value.trim();
-  if (!msg) return;
-  input.value = '';
-  input.style.height = 'auto';
-
-  appendMsg('user', msg);
-  chatHistory.push({role:'user', content: msg});
-
-  const sendBtn = document.getElementById('send-btn');
-  sendBtn.disabled = true;
-
-  // Add typing indicator
-  const typingId = 'typing-' + Date.now();
-  const typingEl = document.createElement('div');
-  typingEl.className = 'msg ai'; typingEl.id = typingId;
-  typingEl.innerHTML = `<div class="msg-avatar">🧪</div><div class="msg-bubble"><div class="typing"><span></span><span></span><span></span></div></div>`;
-  document.getElementById('chat-messages').appendChild(typingEl);
-  scrollChat();
-
-  try {
-    const resp = await fetch('https://api.anthropic.com/v1/messages', {
-      method: 'POST',
-      headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify({
-        model: 'claude-sonnet-4-20250514',
-        max_tokens: 1000,
-        system: SYSTEM_PROMPT,
-        messages: chatHistory
-      })
-    });
-    const data = await resp.json();
-    const reply = data.content?.[0]?.text || 'Sorry, I could not generate a response. Please try again.';
-    document.getElementById(typingId).remove();
-    appendMsg('ai', reply);
-    chatHistory.push({role:'assistant', content: reply});
-  } catch(e) {
-    document.getElementById(typingId).remove();
-    appendMsg('ai', 'Connection error. Please check your network and try again.');
-  }
-  sendBtn.disabled = false;
-}
-
-function appendMsg(role, text) {
-  const div = document.createElement('div');
-  div.className = 'msg ' + role;
-  const avatar = role === 'ai' ? '🧪' : '👤';
-  // Simple formatting: convert **text** to bold, and newlines to <br>
-  const formatted = text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>').replace(/\n/g, '<br>');
-  div.innerHTML = `<div class="msg-avatar">${avatar}</div><div class="msg-bubble">${formatted}</div>`;
-  document.getElementById('chat-messages').appendChild(div);
-  scrollChat();
-}
-
-function scrollChat() {
-  const cm = document.getElementById('chat-messages');
-  cm.scrollTop = cm.scrollHeight;
-}
-
-function sendSuggested(btn) {
-  document.getElementById('chat-input').value = btn.textContent;
-  sendChat();
-}
 </script>
 </body>
 </html>
