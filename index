@@ -485,41 +485,41 @@
         <div class="topic-header" data-emoji="💧">
           <div class="topic-tag">Topic 01 · Physical Chemistry</div>
           <div class="topic-title">Water in Food Systems</div>
-          <div class="topic-subtitle">The most abundant and most critical molecule in food science</div>
+          <div class="topic-subtitle">The most important molecule in food — understanding it explains almost everything else</div>
         </div>
         <div class="cards-grid">
           <div class="card">
-            <div class="card-title">Molecular Structure & Bonding</div>
-            <p>Water (H₂O) has a <b>bent geometry</b> (104.5° H–O–H angle) due to two lone pairs on oxygen. The high electronegativity of O creates a significant <b>dipole moment of 1.85 D</b>, enabling extensive hydrogen bonding. Each water molecule can form up to <b>4 hydrogen bonds</b> (2 donor, 2 acceptor), with an O···O distance of ~2.8 Å and a bond energy of ~20 kJ/mol.</p>
+            <div class="card-title">Why Water is Unique</div>
+            <p>Water has a <b>bent shape</b> (104.5° bond angle) because the oxygen atom has two lone electron pairs that push the hydrogen atoms together. This shape makes water highly polar — the oxygen end is slightly negative and the hydrogen ends are slightly positive. This polarity is why water molecules stick together through <b>hydrogen bonds</b>. Each water molecule can form up to <b>4 hydrogen bonds</b> at once, creating a strong, cooperative network.</p>
           </div>
           <div class="card">
-            <div class="card-title">Anomalous Properties</div>
+            <div class="card-title">Unusual Properties (and why they matter in food)</div>
             <ul>
-              <li><b>High boiling point</b> (100°C vs −60°C predicted by MW) — due to H-bonding</li>
-              <li><b>High specific heat capacity</b>: 4.18 J g⁻¹ °C⁻¹ (liquid)</li>
-              <li><b>High latent heat of vaporisation</b>: 2257 J g⁻¹ at 100°C</li>
-              <li><b>Maximum density at 4°C</b>: ice less dense than liquid water</li>
-              <li><b>High dielectric constant</b>: 80.1 at 20°C — excellent solvent</li>
+              <li><b>High boiling point (100°C)</b> — H-bonds take a lot of energy to break; explains why steaming cooks food</li>
+              <li><b>High specific heat (4.18 J/g°C)</b> — water resists temperature change; acts as a heat buffer in food</li>
+              <li><b>High latent heat (2257 J/g)</b> — evaporation removes a lot of heat; key to spray drying and evaporative cooling</li>
+              <li><b>Ice is less dense than liquid water</b> — unusual! Ice floats, and freezing expands food cells (causing texture damage)</li>
+              <li><b>Excellent solvent</b> — dissolves salts, sugars, acids easily</li>
             </ul>
           </div>
           <div class="card">
-            <div class="card-title">Bound vs Free Water</div>
-            <p><b>Bound water</b> (monolayer): strongly associated with polar groups; not freezable, not available as solvent; cannot support microbial growth. <b>Multilayer water</b>: less tightly held; can participate in reactions. <b>Free (bulk) water</b>: behaves like pure water; supports enzyme activity, microbial growth, and chemical reactions.</p>
+            <div class="card-title">Three Types of Water in Food</div>
+            <p><b>Bound water</b>: tightly attached to molecules like proteins and starch. It can't be frozen, can't be used by microbes, and doesn't take part in most reactions — it's essentially "locked up." <b>Multilayer water</b>: less tightly held; can dissolve things and participate in some reactions. <b>Free water</b>: behaves like normal water. It can support microbial growth, enzymatic reactions, and chemical spoilage — this is the water that matters most for food safety and shelf life.</p>
           </div>
           <div class="card">
             <div class="card-title">Colligative Properties</div>
-            <p>Properties dependent on <b>number of solute particles</b>, not their nature: (1) Boiling point elevation: ΔTb = Kb·m; (2) Freezing point depression: ΔTf = Kf·m (Kf = 1.86 K·kg/mol for water); (3) Osmotic pressure: π = MRT; (4) Vapour pressure lowering: ΔP/P° = xsolute (Raoult's Law). These are fundamental to food preservation and texture.</p>
+            <p>When you dissolve anything in water, four properties change — and they depend only on <b>how many particles</b> you add, not what they are: (1) <b>Boiling point goes up</b> — adding salt or sugar raises the boiling point of a solution; (2) <b>Freezing point goes down</b> — ice cream doesn't freeze solid because of sugars; (3) <b>Vapour pressure drops</b> — the basis of water activity (Topic 8); (4) <b>Osmotic pressure increases</b> — drives water across membranes; used in jam-making and curing.</p>
           </div>
         </div>
         <div class="equation-box">
-          <div class="eq-label">Raoult's Law (vapour pressure lowering)</div>
+          <div class="eq-label">Raoult's Law — links to water activity</div>
           P = x_w · P°<br>
-          where: P = vapour pressure of solution, x_w = mole fraction of water, P° = vapour pressure of pure water
-          <div class="eq-vars">Directly related to water activity: aw = P/P° = x_w (for ideal solutions)</div>
+          aw = P / P°
+          <div class="eq-vars">P = vapour pressure of the food; P° = vapour pressure of pure water; x_w = fraction of water molecules in the mixture. Simply put: the more solutes you add, the lower aw drops.</div>
         </div>
         <div class="highlight-box">
-          <div class="hl-title">⚠ Examination Focus</div>
-          <p>Understand why water's anomalous properties arise from hydrogen bonding. Be able to distinguish bound, multilayer, and free water and explain their roles in food stability. Link to water activity (Topic 8).</p>
+          <div class="hl-title">⚠ Exam Tip</div>
+          <p>Know the difference between bound, multilayer, and free water and why only free water causes spoilage. Make sure you can connect water's unusual properties back to hydrogen bonding. This topic feeds directly into water activity (Topic 8) and glass transition (Topic 5).</p>
         </div>
         <div class="ref-box">
           <div class="ref-title">Key References</div>
@@ -534,44 +534,44 @@
         <div class="topic-header" data-emoji="🍬">
           <div class="topic-tag">Topic 02 · Carbohydrate Chemistry</div>
           <div class="topic-title">Carbohydrates</div>
-          <div class="topic-subtitle">Structure, reactivity, and functional roles in foods</div>
+          <div class="topic-subtitle">From simple sugars to complex starches — structure drives function</div>
         </div>
         <div class="cards-grid">
           <div class="card">
-            <div class="card-title">Classification</div>
+            <div class="card-title">Basic Classification</div>
             <ul>
-              <li><b>Monosaccharides</b>: glucose, fructose, galactose — aldoses & ketoses</li>
-              <li><b>Disaccharides</b>: sucrose (α-1,2), lactose (β-1,4), maltose (α-1,4)</li>
-              <li><b>Oligosaccharides</b>: DP 3–10 (e.g., raffinose, stachyose)</li>
-              <li><b>Polysaccharides</b>: DP >10 — starch, cellulose, pectin, guar gum</li>
+              <li><b>Monosaccharides</b> (single sugars): glucose, fructose, galactose — the building blocks</li>
+              <li><b>Disaccharides</b> (2 sugars joined): sucrose (table sugar), lactose (milk sugar), maltose (malt sugar)</li>
+              <li><b>Oligosaccharides</b>: 3–10 units; found in legumes (raffinose, stachyose) — cause flatulence!</li>
+              <li><b>Polysaccharides</b>: hundreds to thousands of units; include starch, cellulose, pectin, gum</li>
             </ul>
           </div>
           <div class="card">
-            <div class="card-title">Starch Structure</div>
-            <p><b>Amylose</b>: linear α-(1→4) linked glucose; MW 10⁵–10⁶ Da; ~20–25% of starch; forms helical inclusion complexes with iodine (blue-black). <b>Amylopectin</b>: branched α-(1→4) with α-(1→6) branch points every 24–30 glucose units; MW 10⁷–10⁹ Da; ~75–80%; red-purple with iodine. Waxy starches: ~100% amylopectin.</p>
+            <div class="card-title">Starch: Two Very Different Components</div>
+            <p><b>Amylose</b>: a long, straight chain of glucose units (~20–25% of starch). Think of it like a long rope. Turns <b>blue-black with iodine</b>. <b>Amylopectin</b>: a heavily branched, tree-like structure (~75–80% of starch). Turns <b>red-purple with iodine</b>. Both are made of glucose, but their shape gives them completely different properties in food. Waxy starches (e.g., waxy maize) are nearly 100% amylopectin.</p>
           </div>
           <div class="card">
-            <div class="card-title">Starch Gelatinisation</div>
-            <p>Irreversible swelling of starch granules in excess water on heating above the <b>gelatinisation temperature</b> (60–80°C, varies by source). Steps: water absorption → granule swelling → crystallinity loss → amylose leaching → viscosity peak → granule rupture → gel formation on cooling. Measured by <b>DSC</b> and <b>RVA</b> (Rapid Visco Analyser).</p>
+            <div class="card-title">Starch Gelatinisation — What Happens When You Cook Starch</div>
+            <p>When you heat starch in water (60–80°C depending on the source), the starch granules absorb water, swell up, and lose their ordered crystalline structure. Amylose leaches out into the water. The mixture becomes thick and viscous. When it cools, it sets into a gel. This is how cornflour thickens a sauce, or rice becomes sticky when cooked. It is <b>irreversible</b> — you can't un-cook starch. Measured in the lab using DSC (heat) or RVA (viscosity changes).</p>
           </div>
           <div class="card">
-            <div class="card-title">Retrogradation</div>
-            <p>Re-ordering of starch chains during cooling/storage. <b>Amylose</b> retrogradesfirst (hours; responsible for initial gel network and bread firming). <b>Amylopectin</b> retrogradelater (days–weeks; causes staling). Retrogradation is influenced by moisture, temperature, and lipid/emulsifier content. Measured by DSC endotherm at ~50–60°C.</p>
+            <div class="card-title">Retrogradation — What Happens When Starch Cools and Ages</div>
+            <p>After gelatinisation, starch chains slowly try to re-organise and re-crystallise during storage. This is called <b>retrogradation</b>. <b>Amylose</b> retrograde quickly (hours) — forms the initial firm gel. <b>Amylopectin</b> retrograde slowly (days to weeks) — this is what makes bread go stale and rice go hard. Retrogradation is reversible by reheating (e.g., day-old bread toasted). Detected by DSC as a melting endotherm around 50–60°C.</p>
           </div>
         </div>
         <div class="cards-grid">
           <div class="card">
-            <div class="card-title">Maillard Reaction</div>
-            <p>Non-enzymatic browning between <b>reducing sugars</b> and <b>amino groups</b> (amino acids, peptides, proteins). Three stages: (1) Initial — condensation → Schiff base → Amadori rearrangement product; (2) Intermediate — Amadori product degradation → furfurals, reductones; (3) Final — polymerisation → brown <b>melanoidins</b>. Promoted by: high temperature, low moisture (aw 0.3–0.7), alkaline pH, reactive amino acids (Lys), pentose sugars.</p>
+            <div class="card-title">Maillard Reaction — Browning with Flavour</div>
+            <p>This is the reaction that browns bread crusts, roasted coffee, grilled meat, and cookies. It requires two things: a <b>reducing sugar</b> (like glucose) AND an <b>amino group</b> (from amino acids or proteins). The reaction happens in three stages: (1) Sugar + amino acid join up and rearrange (Amadori product); (2) The intermediate breaks down into reactive compounds; (3) These polymerise into <b>brown melanoidins</b> and hundreds of flavour/aroma molecules. It is faster at high temperature, low moisture (aw 0.3–0.7), and alkaline pH.</p>
           </div>
           <div class="card">
-            <div class="card-title">Caramelisation</div>
-            <p>Thermal degradation of <b>sugars without amino groups</b>. Onset temperatures: fructose 110°C, glucose 160°C, sucrose 160°C, maltose 180°C. Products: caramels (complex mixtures of oligomers, polymers), volatile compounds (furanones, diacetyl), brown pigments. Reactions: dehydration, cyclisation, polymerisation, fragmentation.</p>
+            <div class="card-title">Caramelisation — Browning Without Protein</div>
+            <p>Heat sugar by itself to a high enough temperature and it will brown — this is caramelisation. No amino acids needed. Different sugars start caramelising at different temperatures: fructose begins at 110°C, glucose and sucrose at ~160°C, maltose at ~180°C. The products include brown pigments and characteristic caramel flavours (furanones, diacetyl). Used in confectionery, caramel sauce, and crème brûlée.</p>
           </div>
         </div>
         <div class="highlight-box">
-          <div class="hl-title">Key Distinction</div>
-          <p><b>Maillard reaction</b> requires a nitrogen source (amino acids/proteins) + reducing sugars. <b>Caramelisation</b> is purely sugar pyrolysis — no nitrogen required. Both produce brown colours and flavour compounds but through different mechanisms.</p>
+          <div class="hl-title">Key Distinction — Easy to Mix Up!</div>
+          <p><b>Maillard reaction</b>: needs a <em>sugar + amino acid/protein</em>. Think bread crust, coffee, meat browning. <b>Caramelisation</b>: only needs <em>sugar + heat</em>. Think toffee, caramel sauce. Both produce brown colours and complex flavours but through completely different chemistry.</p>
         </div>
         <div class="ref-box">
           <div class="ref-title">Key References</div>
@@ -586,39 +586,38 @@
         <div class="topic-header" data-emoji="🌊">
           <div class="topic-tag">Topic 03 · Colloid Science</div>
           <div class="topic-title">Gelation</div>
-          <div class="topic-subtitle">Network formation, gel structure, and rheological behaviour</div>
+          <div class="topic-subtitle">How foods set — networks, junctions, and the science of texture</div>
         </div>
         <div class="cards-grid">
           <div class="card">
             <div class="card-title">What is a Gel?</div>
-            <p>A gel is a <b>viscoelastic semi-solid</b>: a three-dimensional network that immobilises a liquid phase. Gels exhibit solid-like elastic behaviour (G' > G") at rest but can flow under stress. Characterised by: gel strength (storage modulus G'), gelation temperature, melting temperature, and reversibility.</p>
+            <p>A gel is somewhere between a solid and a liquid. It has a <b>3D network of molecules</b> that traps water and holds the food in shape — but the network is held together by relatively weak forces, not hard covalent bonds. Think of jelly (gelatin gel), jam (pectin gel), or a boiled egg (protein gel). The key test: a gel's <b>elastic modulus (G') is greater than its viscous modulus (G'')</b>, meaning it acts more like a solid than a liquid at rest.</p>
           </div>
           <div class="card">
-            <div class="card-title">Physical vs Chemical Gels</div>
-            <p><b>Physical gels</b>: held by non-covalent interactions (H-bonds, hydrophobic, ionic, van der Waals). Often thermoreversible (e.g., gelatin, agar, pectin). <b>Chemical gels</b>: formed by covalent cross-links. Irreversible (e.g., heat-set protein gels, enzyme cross-linked gels). Most food gels are physical.</p>
+            <div class="card-title">Physical Gels vs Chemical Gels</div>
+            <p><b>Physical gels</b> are held together by weak interactions — hydrogen bonds, hydrophobic interactions, or ionic bridges. They are usually <b>reversible</b>: melt and re-set with temperature (e.g., gelatin melts in your mouth, agar melts when heated). <b>Chemical gels</b> are held by strong <b>covalent bonds</b> and cannot be reversed (e.g., a cooked egg white — you can't un-cook it). Most gels in food are physical gels.</p>
           </div>
           <div class="card">
-            <div class="card-title">Gelatin</div>
-            <p>Derived from collagen (partial hydrolysis of triple helix). On cooling, partial re-formation of <b>triple helices</b> (junction zones) creates network. Sol-gel transition at ~30–35°C (near body temperature — melt-in-mouth). Gel strength measured in <b>Bloom number</b> (g; 50–300). Concentration for gel: ≥1% w/w. Impaired by: low concentration, high temperature, extreme pH, proteases.</p>
+            <div class="card-title">Gelatin — How it Works</div>
+            <p>Gelatin comes from collagen (found in animal bones and connective tissue). When dissolved in hot water, the collagen triple helices unwind. On cooling below ~35°C, the chains partially re-form short helical sections called <b>junction zones</b> — these link chains together to make the gel network. This is why gelatin melts at body temperature (melt-in-mouth effect). <b>Bloom number</b> measures gel strength (50–300 g; higher = stronger gel).</p>
           </div>
           <div class="card">
-            <div class="card-title">Pectin Gelation</div>
-            <p><b>High-methoxyl pectin (HM, DE>50%)</b>: gels at low pH (<3.5) and high sugar (>55°Brix) via hydrophobic interactions and H-bonds — junction zones between partially demethylated regions. <b>Low-methoxyl pectin (LM, DE<50%)</b>: gels with divalent cations (Ca²⁺) via the <b>egg-box model</b> — Ca²⁺ cross-links guluronate/galacturonate sequences. Independent of pH and sugar.</p>
+            <div class="card-title">Pectin Gels — Two Very Different Types</div>
+            <p><b>High-methoxyl (HM) pectin</b> (DE >50%): needs low pH (<3.5) AND lots of sugar (>55°Brix, like jam). The sugar removes water from around the pectin chains and allows them to bond together via hydrogen bonds and hydrophobic forces. <b>Low-methoxyl (LM) pectin</b> (DE <50%): needs <b>calcium ions (Ca²⁺)</b>. The calcium bridges neighbouring pectin chains together — this is the <b>egg-box model</b> (Ca²⁺ sits in the cavity between two chains like eggs in a box). No sugar or acid needed.</p>
           </div>
           <div class="card">
             <div class="card-title">Agar & Carrageenan</div>
-            <p><b>Agar</b>: agarose + agaropectin extracted from red algae. Gels by double helix (coil→helix) transition at ~40°C; melts at ~85°C. Large hysteresis. <b>ι-Carrageenan</b>: ionic gel with Ca²⁺; elastic, thixotropic. <b>κ-Carrageenan</b>: brittle gel; synergistic with locust bean gum. <b>λ-Carrageenan</b>: does not gel; thickener only.</p>
+            <p><b>Agar</b>: extracted from red seaweed. Forms a very firm, brittle gel. Sets at ~40°C but doesn't melt until ~85°C — this <b>hysteresis</b> (big gap between setting and melting temperatures) makes agar useful in microbiology plates and hot-climate desserts. <b>κ-Carrageenan</b>: firm, brittle gel; works better with potassium ions. <b>ι-Carrageenan</b>: soft, elastic gel; needs calcium ions. <b>λ-Carrageenan</b>: does not form a gel at all — only thickens.</p>
           </div>
           <div class="card">
             <div class="card-title">Protein Gels</div>
-            <p>Heat-set protein gels: denaturation → unfolding → aggregation → network. <b>Fine-stranded gels</b> (low ionic strength, pH far from pI): transparent, elastic. <b>Particulate gels</b> (high ionic strength or near pI): opaque, brittle. Key proteins: whey proteins (β-lactoglobulin), soy proteins, egg white (ovalbumin), myosin (meat gels).</p>
+            <p>Protein gels form when proteins are heated — they unfold (denature), then stick to each other and form a network. The texture depends on conditions: at <b>low ionic strength and away from the protein's pI</b>, proteins form transparent, elastic gels (fine-stranded). Near the <b>isoelectric point or high salt</b>, they form opaque, crumbly gels (particulate). Examples: cooked egg white (ovalbumin), tofu (soy protein), set yoghurt (casein), meat patty (myosin).</p>
           </div>
         </div>
         <div class="equation-box">
-          <div class="eq-label">Gel Rheology (Small Amplitude Oscillatory Shear)</div>
-          G* = G' + iG''<br>
-          tan δ = G''/G' (loss tangent)<br>
-          <div class="eq-vars">G' = storage (elastic) modulus; G'' = loss (viscous) modulus; tan δ < 1 indicates gel-like behaviour</div>
+          <div class="eq-label">How we measure gel strength (Oscillatory Rheology)</div>
+          tan δ = G'' / G'<br>
+          <div class="eq-vars">G' = elastic (solid-like) modulus; G'' = viscous (liquid-like) modulus. If tan δ &lt; 1, the material is a gel (solid-like). If tan δ &gt; 1, it flows (liquid-like). A firmer gel has a larger G'.</div>
         </div>
         <div class="ref-box">
           <div class="ref-title">Key References</div>
@@ -633,46 +632,45 @@
         <div class="topic-header" data-emoji="🧬">
           <div class="topic-tag">Topic 04 · Protein Chemistry</div>
           <div class="topic-title">Proteins in Food Systems</div>
-          <div class="topic-subtitle">Structure, denaturation, and functional properties</div>
+          <div class="topic-subtitle">Structure, denaturation, and why proteins behave the way they do in food</div>
         </div>
         <div class="cards-grid">
           <div class="card">
-            <div class="card-title">Structural Hierarchy</div>
+            <div class="card-title">The Four Levels of Protein Structure</div>
             <ul>
-              <li><b>Primary</b>: amino acid sequence; peptide bonds; determined by DNA</li>
-              <li><b>Secondary</b>: α-helix (3.6 residues/turn, H-bonds i to i+4), β-sheet (parallel/antiparallel, H-bonds between strands), β-turns, random coil</li>
-              <li><b>Tertiary</b>: 3D folding; stabilised by disulfide bonds, H-bonds, hydrophobic interactions, electrostatic/salt bridges, van der Waals</li>
-              <li><b>Quaternary</b>: assembly of multiple polypeptides (subunits)</li>
+              <li><b>Primary</b>: the sequence of amino acids joined by peptide bonds — like letters spelling a word. Determined by DNA.</li>
+              <li><b>Secondary</b>: local folding into regular shapes — <b>α-helix</b> (coil held by H-bonds) or <b>β-sheet</b> (flat pleated strands). These are the repeating "shapes" within the chain.</li>
+              <li><b>Tertiary</b>: the overall 3D shape of the whole protein — how it folds up in space. Stabilised by several interactions (see below).</li>
+              <li><b>Quaternary</b>: when multiple protein chains combine (e.g., haemoglobin = 4 chains).</li>
             </ul>
           </div>
           <div class="card">
-            <div class="card-title">Denaturation</div>
-            <p>Loss of higher-order structure without hydrolysis of peptide bonds. Causes: <b>Heat</b> (disrupts H-bonds, increases hydrophobic effect entropy), <b>pH extremes</b> (alter ionisation, disrupt electrostatic interactions), <b>Chaotropic agents</b> (urea, guanidinium HCl), <b>Organic solvents</b>, <b>High pressure</b>. Usually irreversible in food processing. Enthalpy change measured by DSC (denaturation temperature Td, enthalpy ΔHd).</p>
+            <div class="card-title">What Holds a Protein Together?</div>
+            <p>Tertiary structure is maintained by: <b>Covalent disulfide bonds</b> (–S–S– bridges between cysteine residues; the strongest). <b>Hydrogen bonds</b> between polar groups. <b>Hydrophobic interactions</b>: non-polar (oily) parts cluster in the protein's core away from water — this is the main driving force for folding. <b>Electrostatic attractions</b>: opposite charges attract (salt bridges). <b>Van der Waals forces</b>: weak but numerous.</p>
           </div>
           <div class="card">
-            <div class="card-title">Isoelectric Point (pI)</div>
-            <p>The pH at which net charge = 0 and <b>protein solubility is minimum</b>. Important because: (1) Protein precipitates at pI (used in isoelectric precipitation of casein at pH 4.6); (2) Emulsification and foaming are lowest at pI; (3) Electrophoretic mobility = 0. pI values: casein ~4.6, β-lactoglobulin ~5.2, ovalbumin ~4.7, myosin ~5.4, soy 11S ~4.6.</p>
+            <div class="card-title">Denaturation — Unfolding the Protein</div>
+            <p>Denaturation means the protein <b>loses its 3D shape</b> — the higher-level structure (secondary, tertiary) is disrupted, but the amino acid chain (primary structure) stays intact. Causes: <b>Heat</b> (most common in food processing), <b>extreme pH</b>, <b>high pressure</b>, agitation (whipping), organic solvents. Usually irreversible in food — a cooked egg white will not become liquid again. Measured by DSC (denaturation temperature Td and enthalpy ΔHd).</p>
           </div>
           <div class="card">
-            <div class="card-title">Functional Properties</div>
-            <ul>
-              <li><b>Solubility</b>: NSI (Nitrogen Solubility Index); affects all functions</li>
-              <li><b>Water holding capacity</b>: critical in meat, dairy</li>
-              <li><b>Gelation</b>: heat-set or cold-set; WHC, texture</li>
-              <li><b>Emulsification</b>: adsorption at oil-water interface; surface hydrophobicity key</li>
-              <li><b>Foaming</b>: adsorption at air-water interface; flexibility vs rigidity tradeoff</li>
-              <li><b>Maillard browning</b>: ε-amino group of Lys most reactive</li>
-            </ul>
+            <div class="card-title">Isoelectric Point (pI) — the pH Sweet Spot</div>
+            <p>Every protein has a pH value at which its positive and negative charges balance out — net charge = 0. This is the <b>isoelectric point (pI)</b>. At the pI, proteins are least soluble and most likely to clump together. This is useful: cheesemakers lower pH to ~4.6 to precipitate casein (its pI). Away from the pI, proteins carry a charge and repel each other, so they stay dissolved. Key pI values: casein ~4.6, β-lactoglobulin ~5.2, ovalbumin ~4.7.</p>
           </div>
         </div>
         <div class="two-col">
           <div class="highlight-box">
-            <div class="hl-title">Surface Hydrophobicity</div>
-            <p>A key determinant of emulsification and foaming. Measured by fluorescent probes (ANS, CPA) or hydrophobic interaction chromatography. Partial denaturation can expose hydrophobic residues and improve functional properties — the basis for protein modification technologies.</p>
+            <div class="hl-title">Protein Functional Properties</div>
+            <ul style="font-size:0.86rem;line-height:1.8;padding-left:0;list-style:none">
+              <li>💧 <b>Solubility</b>: affects everything else; drops at pI</li>
+              <li>💦 <b>Water holding</b>: critical in meat and dairy</li>
+              <li>🫧 <b>Foaming</b>: proteins stabilise air bubbles (egg white)</li>
+              <li>🧈 <b>Emulsification</b>: proteins coat oil droplets (mayonnaise)</li>
+              <li>🧊 <b>Gelation</b>: heat-set networks (egg, tofu, meat)</li>
+            </ul>
           </div>
           <div class="highlight-box">
-            <div class="hl-title">Disulfide Bonds</div>
-            <p>Covalent cross-links between Cys residues. Critical in gluten network (gliadin + glutenin) — disulfide interchange during dough mixing creates viscoelastic network. Thiol–disulfide exchange catalysed by SSL and DATEM in breadmaking.</p>
+            <div class="hl-title">Disulfide Bonds in Baking</div>
+            <p style="font-size:0.86rem;line-height:1.6">Wheat gluten is made of <b>gliadin + glutenin</b>. During dough mixing, disulfide bonds form and break between cysteine residues, building an extensible, elastic network. This is what gives bread dough its stretch and structure. Additives like SSL and DATEM modify this network — they act on the –SH/–S–S– exchange chemistry.</p>
           </div>
         </div>
         <div class="ref-box">
@@ -687,38 +685,41 @@
       <div class="topic-content" id="topic-4">
         <div class="topic-header" data-emoji="🔬">
           <div class="topic-tag">Topic 05 · Physical State</div>
-          <div class="topic-title">Glass Transition Temperature</div>
-          <div class="topic-subtitle">Amorphous state physics and food stability</div>
+          <div class="topic-title">Glass Transition Temperature (Tg)</div>
+          <div class="topic-subtitle">Why some foods go soft, sticky, or collapse — it all comes down to molecular mobility</div>
         </div>
         <div class="cards-grid">
           <div class="card">
-            <div class="card-title">Amorphous vs Crystalline</div>
-            <p><b>Crystalline</b>: long-range molecular order; sharp melting point (Tm); lower free energy. <b>Amorphous</b>: disordered; no sharp melting point. Below Tg → <b>glassy state</b> (rigid, brittle, very high viscosity ~10¹² Pa·s). Above Tg → <b>rubbery state</b> (mobile, viscoelastic, ~10⁸–10⁹ Pa·s). Most freeze-dried and spray-dried foods are amorphous.</p>
+            <div class="card-title">Two States of an Amorphous Food</div>
+            <p>Some foods (especially dried and frozen ones) exist in an <b>amorphous</b> state — their molecules are disordered, not arranged in a crystal lattice. These materials exist in one of two states separated by the glass transition temperature (Tg): <b>Below Tg → Glassy state</b>: the material is hard, brittle, rigid, and very stable. Molecules barely move. Think of a hard boiled sweet or crispy cracker. <b>Above Tg → Rubbery state</b>: the material becomes soft, sticky, and mobile. Reactions speed up. Think of a stale cracker that's gone soft.</p>
           </div>
           <div class="card">
-            <div class="card-title">WLF Equation</div>
-            <div class="eq-label" style="font-size:0.7rem;color:var(--text-muted);margin-bottom:6px;">Williams-Landel-Ferry (1955)</div>
-            <div style="font-family:'JetBrains Mono';font-size:0.85rem;color:var(--accent2);line-height:1.8">log(aT) = −C₁(T − Tg) / (C₂ + T − Tg)</div>
-            <p style="font-size:0.83rem;margin-top:10px;line-height:1.6">Universal constants (at Tg): C₁ = 17.44, C₂ = 51.6 K. aT = ratio of relaxation times. Predicts <b>dramatic increase in molecular mobility</b> above Tg — reaction rates increase orders of magnitude.</p>
-          </div>
-          <div class="card">
-            <div class="card-title">Plasticisation by Water</div>
-            <p>Water is the most potent plasticiser in food: it increases free volume → <b>lowers Tg</b>. The Gordon–Taylor equation predicts Tg of mixtures: Tg = (w₁Tg₁ + kw₂Tg₂)/(w₁ + kw₂). For anhydrous sucrose Tg ≈ 65°C; at aw = 0.33, Tg ≈ 25°C. Below Tg the material is stable; above Tg reactions accelerate (crystallisation, collapse, stickiness).</p>
-          </div>
-          <div class="card">
-            <div class="card-title">Food Stability Implications</div>
+            <div class="card-title">Why Tg Matters in Food</div>
             <ul>
-              <li><b>Caking</b>: powder above Tg → viscous flow → particle fusion (spray-dried powders)</li>
-              <li><b>Crystallisation</b>: amorphous lactose crystallises above Tg at aw>0.3</li>
-              <li><b>Crispness loss</b>: extruded snacks soften above Tg at high aw</li>
-              <li><b>Freeze-drying</b>: collapse temperature ≈ Tg of maximally freeze-concentrated solution (Tg')</li>
-              <li><b>Maillard reaction</b>: greatly accelerated above Tg</li>
+              <li><b>Caking of powders</b>: spray-dried powders (e.g., milk powder) clump when stored above Tg because particles become sticky and fuse together</li>
+              <li><b>Crispness loss</b>: extruded snacks (crisps, crackers) go soft when moisture raises Tg below room temperature</li>
+              <li><b>Lactose crystallisation</b>: amorphous lactose crystallises above Tg causing graininess in milk powder</li>
+              <li><b>Freeze-drying</b>: product collapses during drying if temperature exceeds Tg' (the glass transition of the maximally freeze-concentrated solution)</li>
+              <li><b>Maillard reaction</b>: accelerates dramatically above Tg</li>
             </ul>
           </div>
+          <div class="card">
+            <div class="card-title">Water as a Plasticiser</div>
+            <p>Water is the most effective <b>plasticiser</b> in food — meaning it lowers Tg. Even a small increase in moisture content can drop Tg significantly. The mechanism: water molecules get between the food polymer chains, increasing the space between them (free volume), which lets the chains move more easily. Example: anhydrous sucrose has Tg ≈ 65°C. At aw = 0.33, Tg drops to ~25°C — now at room temperature, the material is already rubbery and unstable.</p>
+          </div>
+          <div class="card">
+            <div class="card-title">The WLF Equation — Predicting Mobility Above Tg</div>
+            <p>The WLF equation tells us how much faster molecules move (and reactions happen) as temperature rises above Tg. The change is <b>not linear</b> — it's enormous. A small rise in temperature above Tg causes a disproportionately large increase in reaction rates and molecular mobility. This is why the region just above Tg is so critical for food stability. The two universal constants (C₁ = 17.44, C₂ = 51.6 K) apply when Tg is the reference.</p>
+          </div>
+        </div>
+        <div class="equation-box">
+          <div class="eq-label">WLF Equation (Williams-Landel-Ferry, 1955)</div>
+          log(aT) = −17.44 × (T − Tg) / (51.6 + T − Tg)<br>
+          <div class="eq-vars">aT = ratio of relaxation times (how much slower reactions/motion are vs. Tg). T = your temperature. Tg = glass transition temperature. A large log(aT) means the system is much more stable than at Tg.</div>
         </div>
         <div class="highlight-box">
-          <div class="hl-title">Tg Measurement</div>
-          <p>Primarily by <b>Differential Scanning Calorimetry (DSC)</b>: detected as a step change in heat capacity (Cp) baseline — not a peak like melting. Also measured by Dynamic Mechanical Analysis (DMA), Dielectric Analysis, and Thermomechanical Analysis (TMA).</p>
+          <div class="hl-title">How is Tg Measured?</div>
+          <p>The standard method is <b>Differential Scanning Calorimetry (DSC)</b>. Unlike melting (which shows a peak), Tg appears as a <b>step change in the baseline</b> — the heat capacity increases as the material transitions from glassy to rubbery. Also measured by Dynamic Mechanical Analysis (DMA) and Thermomechanical Analysis (TMA).</p>
         </div>
         <div class="ref-box">
           <div class="ref-title">Key References</div>
@@ -733,38 +734,38 @@
         <div class="topic-header" data-emoji="🍯">
           <div class="topic-tag">Topic 06 · Sensory Chemistry</div>
           <div class="topic-title">Food Sweeteners</div>
-          <div class="topic-subtitle">Natural and high-intensity sweeteners, receptor mechanisms</div>
+          <div class="topic-subtitle">How we taste sweetness, and the chemistry behind natural and artificial sweeteners</div>
         </div>
         <div class="cards-grid">
           <div class="card">
-            <div class="card-title">Sweet Taste Receptor</div>
-            <p>Sweetness is perceived via the <b>T1R2/T1R3 heterodimer</b>, a G protein-coupled receptor (GPCR). The receptor has a large extracellular Venus flytrap domain (VFD) on T1R2 where sugars and sweeteners bind, and a cysteine-rich domain (CRD) + transmembrane domain (TMD) for some high-intensity sweeteners (e.g., cyclamate). Signal transduction via <b>α-gustducin → PLC → IP₃ → Ca²⁺ release → TRPM5 → depolarisation</b>.</p>
+            <div class="card-title">How Do We Taste Sweetness?</div>
+            <p>Sweetness is detected on the tongue by a receptor called <b>T1R2/T1R3</b> — a pair of protein subunits that work together as a lock. Sweet molecules act as the key. When a sweetener binds, the receptor triggers a cascade inside the taste cell: <b>T1R2/T1R3 → α-gustducin → PLC → IP₃ → calcium release → TRPM5 channel opens → depolarisation → sweet signal sent to brain</b>. This is why very different molecules (sucrose, aspartame, steviol) can all taste sweet — they all fit this receptor, just at different sites.</p>
           </div>
           <div class="card">
-            <div class="card-title">AH/B/X Theory</div>
-            <p>Shallenberger & Acree (1967): sweetness requires an <b>AH-B system</b> — a proton donor (AH) and electronegative acceptor (B) separated by ~2.5–4 Å, which H-bonds to a complementary site on the receptor. Kier (1972) extended to AH/B/X: X = hydrophobic binding site. Explains why many different molecules taste sweet. Not sufficient to explain all sweeteners — superseded by structural biology of T1R2/T1R3.</p>
+            <div class="card-title">The AH/B/X Theory (older but still useful)</div>
+            <p>Before receptor biology, Shallenberger & Acree (1967) proposed that any sweet molecule must have: an <b>H-bond donor (AH)</b> and an <b>H-bond acceptor (B)</b> separated by about 2.5–4 Å. Kier later added a <b>hydrophobic region (X)</b>. This explains why many structurally different compounds taste sweet — they all share this geometric feature. It's now somewhat superseded by structural biology, but still a good conceptual framework for exams.</p>
           </div>
         </div>
         <div class="table-wrap">
           <table>
-            <tr><th>Sweetener</th><th>Type</th><th>Relative Sweetness (sucrose=1)</th><th>Energy (kcal/g)</th><th>Notes</th></tr>
-            <tr><td>Sucrose</td><td>Natural</td><td>1.0</td><td>4</td><td>Reference standard</td></tr>
-            <tr><td>Fructose</td><td>Natural</td><td>1.2–1.8</td><td>4</td><td>Sweeter cold; used in HFCS</td></tr>
-            <tr><td>Glucose</td><td>Natural</td><td>0.7–0.8</td><td>4</td><td>Directly fermentable</td></tr>
-            <tr><td>Lactose</td><td>Natural</td><td>0.2–0.4</td><td>4</td><td>Milk sugar; low sweetness</td></tr>
-            <tr><td>Sorbitol</td><td>Sugar alcohol</td><td>0.5–0.7</td><td>2.6</td><td>Humectant; laxative effect >50g</td></tr>
-            <tr><td>Xylitol</td><td>Sugar alcohol</td><td>~1.0</td><td>2.4</td><td>Cooling effect; dental caries prevention</td></tr>
-            <tr><td>Acesulfame-K</td><td>Artificial</td><td>~200</td><td>0</td><td>Heat stable; often blended</td></tr>
-            <tr><td>Aspartame</td><td>Artificial</td><td>180–200</td><td>~0</td><td>Unstable at high T/pH; PKU warning</td></tr>
-            <tr><td>Saccharin</td><td>Artificial</td><td>300–500</td><td>0</td><td>Bitter metallic aftertaste</td></tr>
-            <tr><td>Sucralose</td><td>Artificial</td><td>600</td><td>0</td><td>Chlorinated sucrose; heat stable</td></tr>
-            <tr><td>Steviol glycosides</td><td>Natural-derived</td><td>200–400</td><td>0</td><td>From <em>Stevia rebaudiana</em>; rebaudioside A cleanest</td></tr>
-            <tr><td>Thaumatin</td><td>Protein</td><td>2000–3000</td><td>4</td><td>Protein sweetener; flavour modifier</td></tr>
+            <tr><th>Sweetener</th><th>Type</th><th>Relative Sweetness (sucrose=1)</th><th>Energy (kcal/g)</th><th>Key Notes</th></tr>
+            <tr><td>Sucrose</td><td>Natural sugar</td><td>1.0</td><td>4</td><td>Reference standard</td></tr>
+            <tr><td>Fructose</td><td>Natural sugar</td><td>1.2–1.8</td><td>4</td><td>Sweeter when cold; used in HFCS</td></tr>
+            <tr><td>Glucose</td><td>Natural sugar</td><td>0.7–0.8</td><td>4</td><td>Less sweet than sucrose</td></tr>
+            <tr><td>Lactose</td><td>Natural sugar</td><td>0.2–0.4</td><td>4</td><td>Milk sugar; barely sweet</td></tr>
+            <tr><td>Sorbitol</td><td>Sugar alcohol</td><td>0.5–0.7</td><td>2.6</td><td>Humectant; laxative >50g/day</td></tr>
+            <tr><td>Xylitol</td><td>Sugar alcohol</td><td>~1.0</td><td>2.4</td><td>Cooling sensation; good for dental health</td></tr>
+            <tr><td>Acesulfame-K</td><td>Artificial</td><td>~200</td><td>0</td><td>Heat stable; often blended with others</td></tr>
+            <tr><td>Aspartame</td><td>Artificial</td><td>180–200</td><td>~0</td><td>Breaks down at high temp/pH; not for baking; PKU warning</td></tr>
+            <tr><td>Saccharin</td><td>Artificial</td><td>300–500</td><td>0</td><td>Bitter/metallic aftertaste at high levels</td></tr>
+            <tr><td>Sucralose</td><td>Artificial</td><td>600</td><td>0</td><td>Made from sucrose; heat stable; widely used</td></tr>
+            <tr><td>Steviol glycosides</td><td>Natural-derived</td><td>200–400</td><td>0</td><td>From <em>Stevia</em> leaf; rebaudioside A has cleanest taste</td></tr>
+            <tr><td>Thaumatin</td><td>Sweet protein</td><td>2000–3000</td><td>4</td><td>Protein that tastes sweet; also a flavour modifier</td></tr>
           </table>
         </div>
         <div class="highlight-box">
-          <div class="hl-title">Synergy</div>
-          <p>Blending sweeteners (e.g., acesulfame-K + aspartame; sucralose + sugar) often produces <b>synergistic sweetness</b> — the mixture is sweeter than the sum of parts. This allows reduction in total sweetener use and improved sensory profile (masking aftertastes).</p>
+          <div class="hl-title">Sweetener Synergy — Important for Formulation</div>
+          <p>When you blend two sweeteners (e.g., acesulfame-K + aspartame, or sucralose + sucrose), the mixture is often <b>sweeter than expected</b> from either ingredient alone. This synergy allows manufacturers to use less total sweetener, reduce cost, and mask unpleasant aftertastes. It's a practical formulation tool, not just theory.</p>
         </div>
         <div class="ref-box">
           <div class="ref-title">Key References</div>
@@ -779,52 +780,46 @@
         <div class="topic-header" data-emoji="⚗️">
           <div class="topic-tag">Topic 07 · Biochemistry</div>
           <div class="topic-title">Food Enzymes</div>
-          <div class="topic-subtitle">Kinetics, food applications, and control strategies</div>
+          <div class="topic-subtitle">Biological catalysts — your greatest allies and worst enemies in food processing</div>
         </div>
         <div class="cards-grid">
           <div class="card">
-            <div class="card-title">Michaelis-Menten Kinetics</div>
-            <div class="equation-box" style="margin:0 0 10px">
-              v = V<sub>max</sub>[S] / (K<sub>m</sub> + [S])
+            <div class="card-title">Michaelis-Menten Kinetics — The Core Equation</div>
+            <div class="equation-box" style="margin:8px 0 10px">
+              v = V<sub>max</sub> × [S] / (K<sub>m</sub> + [S])
             </div>
+            <p style="font-size:0.86rem;line-height:1.6">This describes how enzyme reaction rate (v) changes with substrate concentration [S]. At low [S]: rate is roughly proportional to [S] (lots of empty enzymes). At high [S]: rate plateaus at <b>Vmax</b> (all enzymes are busy). The <b>Km</b> value is the [S] where the rate is exactly half of Vmax — it tells you how much substrate is needed to get the enzyme working at half-capacity. <b>Low Km = high affinity</b> (enzyme works well even at low [S]).</p>
+          </div>
+          <div class="card">
+            <div class="card-title">The Lineweaver-Burk Plot</div>
+            <p>By plotting <b>1/v vs 1/[S]</b>, the Michaelis-Menten curve becomes a straight line. This makes it easy to read off kinetic constants: <b>y-intercept = 1/Vmax</b>; <b>x-intercept = −1/Km</b>; <b>slope = Km/Vmax</b>. Also very useful for identifying the type of inhibition from how the lines shift. In practice, non-linear regression on the original curve is now preferred because the double reciprocal gives unequal weight to errors at low [S].</p>
+          </div>
+          <div class="card">
+            <div class="card-title">Three Types of Inhibition</div>
             <ul>
-              <li><b>Vmax</b>: maximum velocity (enzyme saturated); Vmax = kcat·[E]T</li>
-              <li><b>Km</b>: Michaelis constant = [S] at v = Vmax/2; reflects enzyme-substrate affinity (low Km = high affinity)</li>
-              <li><b>kcat</b> (turnover number): mol substrate converted per mol enzyme per sec</li>
-              <li><b>kcat/Km</b>: specificity constant; measure of catalytic efficiency</li>
+              <li><b>Competitive</b>: inhibitor blocks the active site — competes directly with substrate. Km goes up, Vmax unchanged. Can be overcome by adding more substrate. Example: sulfite inhibiting PPO.</li>
+              <li><b>Non-competitive</b>: inhibitor binds elsewhere (allosteric site), changing the enzyme's shape. Vmax goes down, Km unchanged. Cannot be overcome with more substrate.</li>
+              <li><b>Uncompetitive</b>: inhibitor only binds when substrate is already attached. Both Km and Vmax decrease. Rare in food systems.</li>
             </ul>
           </div>
           <div class="card">
-            <div class="card-title">Enzyme Inhibition</div>
+            <div class="card-title">Effect of Temperature and pH</div>
+            <p>Enzyme activity roughly doubles every 10°C (Q10 ≈ 2) — up to an optimal temperature. Above the optimum, the enzyme denatures and activity drops sharply. pH also has an optimal range: each active site residue needs to be in the right ionisation state. Examples: pepsin works best at pH 2 (stomach acid), salivary amylase at pH 6–7, trypsin at pH 8. In food processing, knowing the enzyme's pH/temp optimum helps you either encourage or inactivate it.</p>
+          </div>
+          <div class="card">
+            <div class="card-title">Polyphenol Oxidase (PPO) — Enzymatic Browning</div>
+            <p>PPO is the enzyme responsible for that brown colour when you cut an apple or potato. It contains copper and needs oxygen. It converts <b>phenolic compounds → o-quinones</b>, which spontaneously polymerise into brown pigments. How to stop it: (1) <b>Blanching</b> (heat inactivates enzyme); (2) <b>Acidification</b> (pH <4 slows it dramatically); (3) <b>Ascorbic acid or sulfite</b> (reduce quinones back before they polymerise); (4) <b>Remove O₂</b> (modified atmosphere, vacuum).</p>
+          </div>
+          <div class="card">
+            <div class="card-title">Key Food Enzymes to Know</div>
             <ul>
-              <li><b>Competitive</b>: inhibitor binds active site; apparent Km increases, Vmax unchanged; overcome by excess [S]</li>
-              <li><b>Uncompetitive</b>: inhibitor binds only ES complex; both Km and Vmax decrease (same Vmax/Km)</li>
-              <li><b>Non-competitive</b>: inhibitor binds E or ES; Vmax decreases, Km unchanged (pure) or changes (mixed)</li>
-              <li><b>Irreversible</b>: covalent modification of active site residue</li>
+              <li><b>α-Amylase</b>: breaks down starch → maltose/dextrins; used in bread to improve volume and crust colour</li>
+              <li><b>Chymosin (rennet)</b>: clots milk for cheesemaking by cleaving κ-casein</li>
+              <li><b>Papain/Bromelain</b>: plant proteases used to tenderise meat</li>
+              <li><b>Pectinase</b>: clarifies fruit juices by breaking down pectin</li>
+              <li><b>Transglutaminase</b>: cross-links proteins (Gln–Lys bond); used to make restructured meat and improve dough</li>
+              <li><b>Lipase</b>: develops flavour in cheese; causes rancidity in cereals if not controlled</li>
             </ul>
-          </div>
-          <div class="card">
-            <div class="card-title">Temperature & pH Effects</div>
-            <p>Rate doubles per 10°C rise (Q10 ≈ 2) up to optimal temperature, then drops sharply due to denaturation. Arrhenius equation: k = A·e^(−Ea/RT). pH optimum varies: pepsin pH 2, amylase pH 6–7, trypsin pH 8. Extremes alter ionisation of active site residues (His, Asp, Glu, Cys, Lys) and protein conformation.</p>
-          </div>
-          <div class="card">
-            <div class="card-title">Polyphenol Oxidase (PPO)</div>
-            <p>Cu-containing enzyme. Catalyses: <b>phenols → o-quinones</b> → brown polymers (enzymatic browning). Requires O₂. Substrate: chlorogenic acid (apple, potato), catechins (tea). Prevention: (1) blanching, (2) acidification (pH<4), (3) sulfite/ascorbate addition, (4) chelation (EDTA), (5) modified atmosphere (low O₂), (6) cold storage.</p>
-          </div>
-          <div class="card">
-            <div class="card-title">Food-Relevant Enzymes</div>
-            <ul>
-              <li><b>α-Amylase</b>: endo-cleaves α-(1→4); bread volume, starch liquefaction</li>
-              <li><b>Protease</b>: cheese ripening (chymosin), meat tenderisation (papain, bromelain)</li>
-              <li><b>Lipase</b>: cheese flavour (fatty acids); rancidity in cereals</li>
-              <li><b>Lipoxygenase</b>: oxidises PUFAs → off-flavours; bleaches flour (desirable)</li>
-              <li><b>Pectinase</b>: fruit juice clarification, wine processing</li>
-              <li><b>Transglutaminase</b>: cross-links Gln-Lys; restructured meat, improved dough</li>
-            </ul>
-          </div>
-          <div class="card">
-            <div class="card-title">Lineweaver-Burk Plot</div>
-            <p>Double reciprocal plot: <b>1/v vs 1/[S]</b>. Linear transformation of Michaelis-Menten: 1/v = (Km/Vmax)·(1/[S]) + 1/Vmax. Slope = Km/Vmax; y-intercept = 1/Vmax; x-intercept = −1/Km. Used to determine inhibition type and kinetic constants, though prone to error at low [S]. Modern: non-linear regression preferred.</p>
           </div>
         </div>
         <div class="ref-box">
@@ -839,48 +834,40 @@
       <div class="topic-content" id="topic-7">
         <div class="topic-header" data-emoji="📊">
           <div class="topic-tag">Topic 08 · Physical Chemistry</div>
-          <div class="topic-title">Water Activity</div>
-          <div class="topic-subtitle">Thermodynamic measure of water availability in foods</div>
+          <div class="topic-title">Water Activity (aw)</div>
+          <div class="topic-subtitle">Not just how much water — but how available it is</div>
         </div>
         <div class="cards-grid">
           <div class="card">
-            <div class="card-title">Definition & Measurement</div>
-            <div class="equation-box" style="margin:0 0 10px">a<sub>w</sub> = p/p° = ERH/100
-            </div>
-            <p style="font-size:0.85rem;line-height:1.6">p = partial pressure of water vapour above food; p° = vapour pressure of pure water at same T. Equivalent to <b>Equilibrium Relative Humidity (ERH)/100</b>. Range: 0 (anhydrous) to 1.0 (pure water). Measured by <b>chilled mirror dew point hygrometry</b> (most accurate) or capacitance sensors.</p>
+            <div class="card-title">What is Water Activity?</div>
+            <p>Water activity (aw) is a measure of how "available" the water in a food is — not just how much water is present, but how free it is to take part in reactions, support microbes, or escape as vapour. aw = vapour pressure of the food ÷ vapour pressure of pure water, at the same temperature. <b>aw = 1.0</b> means pure water. <b>aw = 0</b> means completely dry. Most fresh foods have aw >0.95. The scale runs from 0 to 1 — even small differences matter enormously.</p>
           </div>
           <div class="card">
-            <div class="card-title">Sorption Isotherms</div>
-            <p>Relationship between aw and moisture content at constant T. <b>Type II sigmoid</b> isotherm typical for foods. Three regions: (1) <b>Monolayer region</b> (aw 0–0.25): tightly bound water; most stable; (2) <b>Multilayer region</b> (aw 0.25–0.7): dissolution of solutes; (3) <b>Capillary/free water</b> (aw >0.7): free water; microbial growth. <b>Hysteresis</b>: desorption > adsorption isotherm (due to capillary effects, polymer matrix changes).</p>
+            <div class="card-title">How is aw Measured?</div>
+            <p>The most accurate method is <b>chilled mirror dew point hygrometry</b>: the food sample is enclosed in a chamber; a mirror is cooled until dew forms; the temperature at which this occurs relates directly to aw. Capacitance sensors (faster, less accurate) are also used in industry. Important: aw is temperature-dependent — always state the measurement temperature. Results given as ERH/100 (equilibrium relative humidity).</p>
           </div>
           <div class="card">
-            <div class="card-title">BET Equation</div>
-            <div class="equation-box" style="margin:0 0 10px;font-size:0.8rem">
-              aw / [m(1−aw)] = 1/(m₀C) + (C−1)/(m₀C) · aw
-            </div>
-            <p style="font-size:0.85rem;line-height:1.6">Brunauer-Emmett-Teller: m = moisture content, m₀ = <b>monolayer moisture content</b>, C = constant related to binding energy. Monolayer: most stable moisture content; maximum shelf life. Plot aw/[m(1-aw)] vs aw → slope and intercept give m₀ and C.</p>
+            <div class="card-title">The Sorption Isotherm</div>
+            <p>If you plot aw (x-axis) against moisture content (y-axis) at a fixed temperature, you get an S-shaped (sigmoid Type II) curve called a <b>moisture sorption isotherm</b>. It has three zones: <b>Zone I</b> (aw 0–0.25): tightly bound monolayer water — most stable, Maillard barely occurs; <b>Zone II</b> (aw 0.25–0.7): loosely bound water — solutes dissolve, some reactions start; <b>Zone III</b> (aw >0.7): free water — microbial growth, fast reactions, spoilage. There is also hysteresis — the drying and rewetting curves don't overlap exactly.</p>
           </div>
           <div class="card">
-            <div class="card-title">Microbial Stability</div>
-            <ul>
-              <li>Most spoilage bacteria: aw <b>≥ 0.91</b></li>
-              <li>Most yeasts: aw <b>≥ 0.88</b></li>
-              <li>Most moulds: aw <b>≥ 0.70–0.80</b></li>
-              <li>Xerophilic moulds (e.g., <em>Aspergillus</em>): aw <b>≥ 0.61</b></li>
-              <li><em>S. aureus</em> (toxin): aw <b>≥ 0.86</b></li>
-              <li><em>C. botulinum</em> (type A/B): aw <b>≥ 0.93</b></li>
-            </ul>
+            <div class="card-title">BET Equation — Finding the "Ideal" Moisture Content</div>
+            <p>The BET (Brunauer-Emmett-Teller) equation is used to calculate the <b>monolayer moisture content (m₀)</b> — the amount of water that is tightly bound in one layer to the food surface. This is the moisture content where the food is most stable (minimum reaction rates, no microbial growth). To find m₀, you plot aw/[m(1−aw)] against aw — a straight line gives you m₀ and C (a constant related to binding energy) from the slope and intercept.</p>
           </div>
         </div>
         <div class="table-wrap">
           <table>
-            <tr><th>aw Range</th><th>Chemical Reactions</th><th>Example Foods</th></tr>
-            <tr><td>0.95–1.0</td><td>All reactions active; microbial growth</td><td>Fresh meat, fish, vegetables</td></tr>
-            <tr><td>0.80–0.95</td><td>Maillard fast; enzymatic browning; oxidation</td><td>Processed cheese, cured meats, jam</td></tr>
-            <tr><td>0.60–0.80</td><td>Maillard moderate; lipid oxidation increasing</td><td>Dry fruits, flour, cereals</td></tr>
-            <tr><td>0.30–0.60</td><td>Maillard minimum; lipid oxidation begins</td><td>Crackers, cookies</td></tr>
-            <tr><td>0–0.30</td><td>Lipid oxidation high; very low reaction rates</td><td>Freeze-dried foods, anhydrous</td></tr>
+            <tr><th>aw Range</th><th>What's Happening</th><th>Example Foods</th></tr>
+            <tr><td>>0.95</td><td>All microbial growth; rapid enzymatic reactions</td><td>Fresh meat, fish, most vegetables</td></tr>
+            <tr><td>0.80–0.95</td><td>Most yeasts/bacteria can grow; Maillard active</td><td>Processed cheese, cured meats, jam</td></tr>
+            <tr><td>0.60–0.80</td><td>Moulds grow; lipid oxidation increasing</td><td>Dried fruit, flour, cereals</td></tr>
+            <tr><td>0.30–0.60</td><td>Maillard at minimum; oxidation begins</td><td>Crackers, cookies, biscuits</td></tr>
+            <tr><td>&lt;0.30</td><td>Very stable biologically; lipid oxidation may increase</td><td>Freeze-dried products, hard candy</td></tr>
           </table>
+        </div>
+        <div class="highlight-box">
+          <div class="hl-title">⚠ Common Exam Confusion</div>
+          <p>Moisture content (%) and water activity (aw) are <b>not the same thing</b>. Two foods can have the same moisture content but very different aw values (e.g., sugar vs. salt solutions). aw is the thermodynamically correct measure of water availability. Always use aw for food stability predictions.</p>
         </div>
         <div class="ref-box">
           <div class="ref-title">Key References</div>
@@ -895,32 +882,37 @@
         <div class="topic-header" data-emoji="🌈">
           <div class="topic-tag">Topic 09 · Pigment Chemistry</div>
           <div class="topic-title">Food Colour Chemistry</div>
-          <div class="topic-subtitle">Natural pigments: structure, stability, and transformations</div>
+          <div class="topic-subtitle">Why foods are coloured, and why those colours change during processing</div>
         </div>
         <div class="cards-grid">
           <div class="card">
-            <div class="card-title">Chlorophylls</div>
-            <p>Green pigments in all photosynthetic plant tissues. <b>Chlorophyll a</b> (blue-green, λmax 430/663 nm) and <b>b</b> (yellow-green, λmax 453/642 nm). Porphyrin ring with central <b>Mg²⁺</b>. Phytol tail confers hydrophobicity. On heating/acidification: Mg²⁺ → H⁺ → <b>olive-green pheophytin</b>. Further hydrolysis → pheophorbide. Preservation: alkaline blanching (adds Mg²⁺), copper chlorophyllin (approved additive E141).</p>
+            <div class="card-title">Chlorophylls — The Green in Plants</div>
+            <p>Chlorophylls give plants their green colour. There are two types: <b>chlorophyll a</b> (blue-green) and <b>chlorophyll b</b> (yellow-green). Both have a large ring structure with a <b>magnesium ion (Mg²⁺) in the centre</b> — this is the source of the vivid green colour. The problem: when you heat or acidify vegetables, the Mg²⁺ is replaced by hydrogen ions (H⁺), forming <b>pheophytin</b> — which is dull olive/grey-green. This is why overcooked vegetables turn that unappetising grey-green. Preserving the colour requires alkaline conditions or adding copper (as in commercial copper chlorophyllin, E141).</p>
           </div>
           <div class="card">
-            <div class="card-title">Carotenoids</div>
-            <p>Polyene pigments: C₄₀ terpenoids with conjugated double-bond chromophore. <b>Carotenes</b> (hydrocarbons): β-carotene (orange, λmax ~450 nm), lycopene (red, λmax ~470 nm). <b>Xanthophylls</b> (oxygenated): lutein, zeaxanthin, astaxanthin (salmon). Cis/trans isomerisation on processing → loss of colour intensity. Prooxidant at high concentrations; antioxidant at low. Lipid-soluble → stable to acid/base but sensitive to light and oxygen.</p>
+            <div class="card-title">Carotenoids — Yellow, Orange, and Red</div>
+            <p>Carotenoids are fat-soluble pigments found in carrots, tomatoes, capsicum, salmon, and eggs. They are long molecules with many alternating double bonds (<b>conjugated polyene system</b>) — the more double bonds, the further into the red end of the spectrum they absorb, and the more red/orange they appear. Two main types: <b>Carotenes</b> (no oxygen): β-carotene (orange), lycopene (red). <b>Xanthophylls</b> (with oxygen): lutein (yellow), astaxanthin (salmon/pink). Quite stable to heat and acid, but sensitive to light and oxygen.</p>
           </div>
           <div class="card">
-            <div class="card-title">Anthocyanins</div>
-            <p>Water-soluble flavonoid pigments (glycosides of anthocyanidins). Colour highly <b>pH-dependent</b>: pH<3 → flavylium cation (<b>red</b>); pH 4–5 → carbinol base (colourless); pH 6–7 → quinonoidal base (<b>blue/purple</b>); pH>8 → chalcone (yellow). Also affected by: co-pigmentation (+stability), metal complexation (Fe³⁺, Al³⁺ → blue), temperature, light, SO₂. ~700 known; found in berries, red cabbage, grape, elderberry.</p>
+            <div class="card-title">Anthocyanins — The pH-Changing Pigments</div>
+            <p>Anthocyanins create the red, purple, and blue colours in berries, red grapes, red cabbage, and beetroot skin. Their most remarkable feature is that their colour <b>changes with pH</b>: at <b>pH < 3</b> → bright <b>red</b> (flavylium cation); at <b>pH 4–5</b> → colourless (carbinol form — colour disappears!); at <b>pH 6–7</b> → <b>blue/purple</b> (quinonoidal base); at <b>pH > 8</b> → yellow (chalcone). This is why red cabbage turns bright blue when you add baking soda, and red when you add vinegar.</p>
           </div>
           <div class="card">
-            <div class="card-title">Myoglobin & Meat Colour</div>
-            <p>Heme protein (MW 16,700 Da); Fe in porphyrin ring. Three forms: <b>Deoxymyoglobin</b> (Fe²⁺, no ligand): purple-red; <b>Oxymyoglobin</b> (Fe²⁺, O₂): bright red (desirable); <b>Metmyoglobin</b> (Fe³⁺): brown (oxidised, undesirable). Interconversion: reducing conditions maintain Fe²⁺; high O₂ → oxymyoglobin; moderate/low O₂ → metmyoglobin. MAP: high-O₂ (70–80%) maintains oxymyoglobin; CO + low-O₂ maintains red colour (some markets).</p>
+            <div class="card-title">Myoglobin — Meat Colour</div>
+            <p>The red colour of fresh meat comes from <b>myoglobin</b>, a protein that holds an iron atom in its centre. The colour depends on the state of that iron: <b>Deoxymyoglobin</b> (Fe²⁺, no oxygen): purple-red — what you see in vacuum-packed meat; <b>Oxymyoglobin</b> (Fe²⁺ + oxygen): bright red — the desirable "fresh" colour seen on the surface; <b>Metmyoglobin</b> (Fe³⁺ — oxidised): brown — the colour of old or oxidised meat. Meat packaging is designed to favour oxymyoglobin (high O₂ MAP keeps meat bright red).</p>
           </div>
           <div class="card">
-            <div class="card-title">Betalains</div>
-            <p>N-containing pigments unique to order Caryophyllales (beetroot, cactus pear, amaranth). <b>Betacyanins</b> (red-violet, λmax ~540 nm): betanin (most common). <b>Betaxanthins</b> (yellow-orange, λmax ~480 nm): vulgaxanthin. Not co-occurring with anthocyanins. Stable at pH 3–7; sensitive to heat, light, O₂. Used as natural food colourants (E162).</p>
+            <div class="card-title">Betalains — Beetroot's Pigments</div>
+            <p>Betalains are nitrogen-containing pigments found only in certain plants including beetroot, cactus pear, and amaranth. They come in two types: <b>Betacyanins</b> (red-violet): betanin is the most common — this is the red pigment in beetroot. <b>Betaxanthins</b> (yellow-orange): vulgaxanthin. Betalains are used as natural food colourings (E162). They are relatively stable at pH 3–7 but degrade quickly with heat, light, and oxygen. They never co-exist with anthocyanins in the same plant — it's one or the other.</p>
           </div>
           <div class="card">
-            <div class="card-title">Curcumin & Other Pigments</div>
-            <p><b>Curcumin</b> (turmeric): yellow diketone; pH-sensitive (yellow → orange-red >pH 8); light-sensitive; E100. <b>Riboflavin</b>: yellow flavin; E101. <b>Caramel</b>: Maillard-derived brown (E150). <b>Annatto</b> (bixin, norbixin from <em>Bixa orellana</em>): yellow-orange; E160b. <b>Paprika</b> (capsanthin, capsorubin): red carotenoids; E160c.</p>
+            <div class="card-title">Other Important Colourings</div>
+            <ul>
+              <li><b>Curcumin (E100)</b>: yellow pigment from turmeric; turns orange-red above pH 8; light-sensitive</li>
+              <li><b>Caramel (E150)</b>: brown colour made by heating sugars (Maillard or caramelisation); most widely used food colourant</li>
+              <li><b>Annatto (E160b)</b>: yellow-orange from <em>Bixa orellana</em> seeds; used in cheese, margarine</li>
+              <li><b>Paprika extract (E160c)</b>: red-orange carotenoids (capsanthin) from peppers; heat-stable</li>
+            </ul>
           </div>
         </div>
         <div class="ref-box">
@@ -936,50 +928,49 @@
         <div class="topic-header" data-emoji="📐">
           <div class="topic-tag">Topic 10 · Analytical Methods</div>
           <div class="topic-title">Colour Measurement</div>
-          <div class="topic-subtitle">CIELAB, colorimetry, and spectrophotometry in food analysis</div>
+          <div class="topic-subtitle">How to objectively measure colour — moving beyond "looks red to me"</div>
         </div>
         <div class="cards-grid">
           <div class="card">
-            <div class="card-title">CIE XYZ Colour Space (1931)</div>
-            <p>The CIE (Commission Internationale de l'Éclairage) tristimulus system. <b>X, Y, Z</b> are virtual primaries derived from human cone responses. Y ≈ luminance (perceived lightness). CIE chromaticity coordinates: x = X/(X+Y+Z), y = Y/(X+Y+Z). Foundation for all modern colour spaces. Dependent on: illuminant (D65 = daylight standard for food), standard observer (2°, 10°), and geometry (0°/45° or integrating sphere).</p>
+            <div class="card-title">Why Measure Colour Objectively?</div>
+            <p>Human eyes are inconsistent — colour perception changes with lighting, fatigue, and individual differences. The food industry needs <b>numbers</b> to describe colour consistently for quality control, shelf-life studies, and regulatory work. Colour measurement instruments give reproducible numbers that don't depend on who is looking or what light they're standing under. The key system used worldwide is <b>CIELAB (L*a*b*)</b>.</p>
           </div>
           <div class="card">
-            <div class="card-title">CIELAB (L*a*b*) Colour Space</div>
+            <div class="card-title">CIELAB — The Three Numbers That Describe Any Colour</div>
             <ul>
-              <li><b>L*</b> (0–100): lightness; 0 = black, 100 = white</li>
-              <li><b>a*</b>: green (−) to red (+); range ≈ −128 to +127</li>
-              <li><b>b*</b>: blue (−) to yellow (+); range ≈ −128 to +127</li>
-              <li><b>Chroma</b>: C*ab = √(a*² + b*²) — saturation/vividness</li>
-              <li><b>Hue angle</b>: h°ab = arctan(b*/a*); 0° = red, 90° = yellow, 180° = green, 270° = blue</li>
+              <li><b>L*</b> (lightness): 0 = perfectly black, 100 = perfectly white. Think of it as the brightness dial.</li>
+              <li><b>a*</b> (red–green axis): positive a* = reddish, negative a* = greenish. Zero = neutral.</li>
+              <li><b>b*</b> (yellow–blue axis): positive b* = yellowish, negative b* = bluish. Zero = neutral.</li>
+              <li><b>Chroma (C*)</b> = √(a*² + b*²): how vivid/saturated the colour is. High chroma = bright, saturated colour.</li>
+              <li><b>Hue angle (h°)</b> = arctan(b*/a*): 0° = red, 90° = yellow, 180° = green, 270° = blue.</li>
             </ul>
           </div>
         </div>
         <div class="equation-box">
-          <div class="eq-label">CIELAB Colour Difference (ΔE*ab)</div>
+          <div class="eq-label">Colour Difference (ΔE*ab) — How Different Are Two Colours?</div>
           ΔE*ab = √[ (ΔL*)² + (Δa*)² + (Δb*)² ]<br>
-          <div class="eq-vars">ΔE*ab &lt;1: imperceptible; 1–2: barely perceptible; 2–3.5: perceptible; &gt;3.5: clearly visible colour difference</div>
+          <div class="eq-vars">ΔE &lt; 1.0: imperceptible to the human eye | ΔE 1–2: just noticeable | ΔE 2–3.5: clearly perceptible | ΔE &gt; 3.5: obvious colour difference. Used in product quality control — if ΔE is below your threshold, the batch is acceptable.</div>
         </div>
         <div class="cards-grid">
           <div class="card">
-            <div class="card-title">Instruments</div>
+            <div class="card-title">Instruments Used</div>
             <ul>
-              <li><b>Colorimeter</b>: measures filtered L*, a*, b* directly; inexpensive; less versatile</li>
-              <li><b>Spectrophotometer/Spectroradiometer</b>: measures full reflectance spectrum (360–780 nm); calculates any colour space; most versatile and accurate</li>
-              <li><b>Hunter Lab colorimeter</b>: older scale (L, a, b; slightly different formulae); still used in industry; not identical to CIELAB</li>
-              <li><b>Imaging colorimetry</b>: multi- or hyperspectral imaging; spatial colour distribution</li>
+              <li><b>Colorimeter</b>: simple, inexpensive instrument. Measures L*, a*, b* directly using a few broad filters. Good for routine QC but can't calculate other colour spaces. Think of it as a point-and-click camera.</li>
+              <li><b>Spectrophotometer</b>: measures the full light spectrum (360–780 nm) reflected or transmitted by the food. More flexible and accurate — can calculate any colour space (CIELAB, Hunter Lab, etc.). Think of it as a full camera with RAW files.</li>
+              <li><b>Hyperspectral imaging</b>: captures spatial colour variation across the whole food surface — useful for checking uniformity of browning, ripeness mapping.</li>
             </ul>
           </div>
           <div class="card">
-            <div class="card-title">Measurement Geometry</div>
-            <p><b>0°/45°</b> (or 45°/0°): illuminates at 0°, measures at 45°; excludes specular (mirror) reflection; measures colour as perceived visually. <b>d/8° (integrating sphere)</b>: diffuse illumination; can include (SPIN) or exclude (SPEX) specular; better for heterogeneous foods. Choice affects results — report geometry, illuminant, and observer with all colour data. <b>SPIN vs SPEX</b>: SPIN used for opacity/translucency, SPEX for surface colour.</p>
+            <div class="card-title">Measurement Geometry — Important Details</div>
+            <p><b>0°/45° geometry</b>: shines light straight on, measures at 45°. Excludes the shiny mirror-like reflection from the surface. Measures colour as it looks to the human eye. Best for most solid foods. <b>Integrating sphere (d/8°)</b>: light comes from all directions; can either include (SPIN) or exclude (SPEX) specular reflection. Better for uneven or translucent foods. Always report the geometry, illuminant (usually D65 = daylight), and standard observer when reporting colour data.</p>
           </div>
           <div class="card">
-            <div class="card-title">Transmittance vs Reflectance</div>
-            <p><b>Reflectance</b>: used for opaque/solid foods (meat, bread, cheese). <b>Transmittance</b>: for clear/translucent liquids (fruit juice, wine, beer); measured as absorbance: A = −log₁₀(T). <b>Total appearance</b>: includes gloss, haze, translucency. For liquids, the <b>Beer-Lambert law</b> applies: A = εcl (ε = molar extinction coefficient, c = concentration, l = path length).</p>
+            <div class="card-title">Reflectance vs Transmittance</div>
+            <p>For <b>solid or opaque foods</b> (meat, bread, cheese): measure <b>reflectance</b> — the light bouncing off the surface. For <b>liquids</b> (juice, wine, beer, oil): measure <b>transmittance</b> — the light passing through. Transmittance is often expressed as <b>absorbance</b> using the Beer-Lambert Law: A = εcl, where ε = extinction coefficient, c = concentration, l = path length (cuvette width). This allows quantification of specific pigments at their peak wavelength.</p>
           </div>
           <div class="card">
-            <div class="card-title">CIEDE2000 (ΔE₀₀)</div>
-            <p>Advanced colour difference formula (ISO/CIE 2014). Corrects for non-uniformity of CIELAB space particularly in blue, chroma, and lightness regions. Adds weighting functions: kL, kC, kH and interactive terms RT (rotation term for blue). <b>Recommended for food colour difference calculations</b> where high precision is needed (e.g., process control, sensory correlation).</p>
+            <div class="card-title">CIEDE2000 (ΔE₀₀) — The Modern Standard</div>
+            <p>The basic ΔE formula above has a weakness: equal ΔE values in different parts of the CIELAB colour space don't always look equally different to humans. The <b>CIEDE2000</b> formula adds correction factors for this non-uniformity, especially in the blue region. It is now recommended for any high-precision colour difference work, including correlating instrument measurements with sensory panel results. You don't need to memorise the full formula — but know it exists and why it's better.</p>
           </div>
         </div>
         <div class="ref-box">
